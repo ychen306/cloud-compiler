@@ -98,7 +98,25 @@ llvm__stress_EXTERNAL_OBJECTS =
 
 bin/llvm-stress: tools/llvm-stress/CMakeFiles/llvm-stress.dir/llvm-stress.cpp.o
 bin/llvm-stress: tools/llvm-stress/CMakeFiles/llvm-stress.dir/build.make
-bin/llvm-stress: lib/libLLVM.dylib
+bin/llvm-stress: lib/libLLVMAnalysis.a
+bin/llvm-stress: lib/libLLVMCore.a
+bin/llvm-stress: lib/libLLVMSupport.a
+bin/llvm-stress: lib/libLLVMObject.a
+bin/llvm-stress: lib/libLLVMBitReader.a
+bin/llvm-stress: lib/libLLVMMCParser.a
+bin/llvm-stress: lib/libLLVMMC.a
+bin/llvm-stress: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-stress: lib/libLLVMDebugInfoMSF.a
+bin/llvm-stress: lib/libLLVMTextAPI.a
+bin/llvm-stress: lib/libLLVMProfileData.a
+bin/llvm-stress: lib/libLLVMCore.a
+bin/llvm-stress: lib/libLLVMBinaryFormat.a
+bin/llvm-stress: lib/libLLVMRemarks.a
+bin/llvm-stress: lib/libLLVMBitstreamReader.a
+bin/llvm-stress: lib/libLLVMSupport.a
+bin/llvm-stress: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-stress: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-stress: lib/libLLVMDemangle.a
 bin/llvm-stress: tools/llvm-stress/CMakeFiles/llvm-stress.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-stress"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-stress && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-stress.dir/link.txt --verbose=$(VERBOSE)

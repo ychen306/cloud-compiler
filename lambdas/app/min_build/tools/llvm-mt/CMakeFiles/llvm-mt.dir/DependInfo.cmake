@@ -22,11 +22,16 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/Users/peyton/UROP/CloudCompiler/llvm-project/llvm/tools/llvm-mt"
   "include"
   "/Users/peyton/UROP/CloudCompiler/llvm-project/llvm/include"
+  "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/include/libxml2"
+  "/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/libxml2"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-shlib/CMakeFiles/LLVM.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/Option/CMakeFiles/LLVMOption.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/Support/CMakeFiles/LLVMSupport.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/WindowsManifest/CMakeFiles/LLVMWindowsManifest.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/Demangle/CMakeFiles/LLVMDemangle.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

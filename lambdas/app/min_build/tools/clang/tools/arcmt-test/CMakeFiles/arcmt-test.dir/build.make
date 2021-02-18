@@ -98,8 +98,42 @@ arcmt__test_EXTERNAL_OBJECTS =
 
 bin/arcmt-test: tools/clang/tools/arcmt-test/CMakeFiles/arcmt-test.dir/arcmt-test.cpp.o
 bin/arcmt-test: tools/clang/tools/arcmt-test/CMakeFiles/arcmt-test.dir/build.make
-bin/arcmt-test: lib/libclang-cpp.dylib
-bin/arcmt-test: lib/libLLVM.dylib
+bin/arcmt-test: lib/libLLVMSupport.a
+bin/arcmt-test: lib/libclangARCMigrate.a
+bin/arcmt-test: lib/libclangBasic.a
+bin/arcmt-test: lib/libclangFrontend.a
+bin/arcmt-test: lib/libclangLex.a
+bin/arcmt-test: lib/libclangSerialization.a
+bin/arcmt-test: lib/libclangDriver.a
+bin/arcmt-test: lib/libclangParse.a
+bin/arcmt-test: lib/libLLVMOption.a
+bin/arcmt-test: lib/libclangRewrite.a
+bin/arcmt-test: lib/libclangSema.a
+bin/arcmt-test: lib/libclangAnalysis.a
+bin/arcmt-test: lib/libclangASTMatchers.a
+bin/arcmt-test: lib/libclangEdit.a
+bin/arcmt-test: lib/libclangAST.a
+bin/arcmt-test: lib/libclangLex.a
+bin/arcmt-test: lib/libclangBasic.a
+bin/arcmt-test: lib/libLLVMFrontendOpenMP.a
+bin/arcmt-test: lib/libLLVMTransformUtils.a
+bin/arcmt-test: lib/libLLVMAnalysis.a
+bin/arcmt-test: lib/libLLVMProfileData.a
+bin/arcmt-test: lib/libLLVMObject.a
+bin/arcmt-test: lib/libLLVMBitReader.a
+bin/arcmt-test: lib/libLLVMCore.a
+bin/arcmt-test: lib/libLLVMRemarks.a
+bin/arcmt-test: lib/libLLVMBitstreamReader.a
+bin/arcmt-test: lib/libLLVMMCParser.a
+bin/arcmt-test: lib/libLLVMMC.a
+bin/arcmt-test: lib/libLLVMDebugInfoCodeView.a
+bin/arcmt-test: lib/libLLVMDebugInfoMSF.a
+bin/arcmt-test: lib/libLLVMTextAPI.a
+bin/arcmt-test: lib/libLLVMBinaryFormat.a
+bin/arcmt-test: lib/libLLVMSupport.a
+bin/arcmt-test: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/arcmt-test: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/arcmt-test: lib/libLLVMDemangle.a
 bin/arcmt-test: tools/clang/tools/arcmt-test/CMakeFiles/arcmt-test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../../bin/arcmt-test"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/clang/tools/arcmt-test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/arcmt-test.dir/link.txt --verbose=$(VERBOSE)

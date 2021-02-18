@@ -113,7 +113,31 @@ llvm__special__case__list__fuzzer_EXTERNAL_OBJECTS =
 bin/llvm-special-case-list-fuzzer: tools/llvm-special-case-list-fuzzer/CMakeFiles/llvm-special-case-list-fuzzer.dir/DummySpecialCaseListFuzzer.cpp.o
 bin/llvm-special-case-list-fuzzer: tools/llvm-special-case-list-fuzzer/CMakeFiles/llvm-special-case-list-fuzzer.dir/special-case-list-fuzzer.cpp.o
 bin/llvm-special-case-list-fuzzer: tools/llvm-special-case-list-fuzzer/CMakeFiles/llvm-special-case-list-fuzzer.dir/build.make
-bin/llvm-special-case-list-fuzzer: lib/libLLVM.dylib
+bin/llvm-special-case-list-fuzzer: lib/libLLVMSupport.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMFuzzMutate.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMBitWriter.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMScalarOpts.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMAggressiveInstCombine.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMInstCombine.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMTransformUtils.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMTarget.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMAnalysis.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMObject.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMBitReader.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMMCParser.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMTextAPI.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMProfileData.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMCore.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMRemarks.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMBitstreamReader.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMMC.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMBinaryFormat.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMDebugInfoMSF.a
+bin/llvm-special-case-list-fuzzer: lib/libLLVMSupport.a
+bin/llvm-special-case-list-fuzzer: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-special-case-list-fuzzer: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-special-case-list-fuzzer: lib/libLLVMDemangle.a
 bin/llvm-special-case-list-fuzzer: tools/llvm-special-case-list-fuzzer/CMakeFiles/llvm-special-case-list-fuzzer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../bin/llvm-special-case-list-fuzzer"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-special-case-list-fuzzer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-special-case-list-fuzzer.dir/link.txt --verbose=$(VERBOSE)

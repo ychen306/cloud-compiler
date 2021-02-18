@@ -113,7 +113,23 @@ llvm__elfabi_EXTERNAL_OBJECTS =
 bin/llvm-elfabi: tools/llvm-elfabi/CMakeFiles/llvm-elfabi.dir/ErrorCollector.cpp.o
 bin/llvm-elfabi: tools/llvm-elfabi/CMakeFiles/llvm-elfabi.dir/llvm-elfabi.cpp.o
 bin/llvm-elfabi: tools/llvm-elfabi/CMakeFiles/llvm-elfabi.dir/build.make
-bin/llvm-elfabi: lib/libLLVM.dylib
+bin/llvm-elfabi: lib/libLLVMInterfaceStub.a
+bin/llvm-elfabi: lib/libLLVMObject.a
+bin/llvm-elfabi: lib/libLLVMSupport.a
+bin/llvm-elfabi: lib/libLLVMTextAPI.a
+bin/llvm-elfabi: lib/libLLVMBitReader.a
+bin/llvm-elfabi: lib/libLLVMCore.a
+bin/llvm-elfabi: lib/libLLVMRemarks.a
+bin/llvm-elfabi: lib/libLLVMBitstreamReader.a
+bin/llvm-elfabi: lib/libLLVMMCParser.a
+bin/llvm-elfabi: lib/libLLVMMC.a
+bin/llvm-elfabi: lib/libLLVMBinaryFormat.a
+bin/llvm-elfabi: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-elfabi: lib/libLLVMDebugInfoMSF.a
+bin/llvm-elfabi: lib/libLLVMSupport.a
+bin/llvm-elfabi: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-elfabi: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-elfabi: lib/libLLVMDemangle.a
 bin/llvm-elfabi: tools/llvm-elfabi/CMakeFiles/llvm-elfabi.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../bin/llvm-elfabi"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-elfabi && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-elfabi.dir/link.txt --verbose=$(VERBOSE)

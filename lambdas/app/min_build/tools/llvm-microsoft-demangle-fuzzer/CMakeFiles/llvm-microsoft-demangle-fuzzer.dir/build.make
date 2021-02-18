@@ -113,7 +113,32 @@ llvm__microsoft__demangle__fuzzer_EXTERNAL_OBJECTS =
 bin/llvm-microsoft-demangle-fuzzer: tools/llvm-microsoft-demangle-fuzzer/CMakeFiles/llvm-microsoft-demangle-fuzzer.dir/DummyDemanglerFuzzer.cpp.o
 bin/llvm-microsoft-demangle-fuzzer: tools/llvm-microsoft-demangle-fuzzer/CMakeFiles/llvm-microsoft-demangle-fuzzer.dir/llvm-microsoft-demangle-fuzzer.cpp.o
 bin/llvm-microsoft-demangle-fuzzer: tools/llvm-microsoft-demangle-fuzzer/CMakeFiles/llvm-microsoft-demangle-fuzzer.dir/build.make
-bin/llvm-microsoft-demangle-fuzzer: lib/libLLVM.dylib
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMDemangle.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMFuzzMutate.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMSupport.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMBitWriter.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMScalarOpts.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMAggressiveInstCombine.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMInstCombine.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMTransformUtils.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMTarget.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMAnalysis.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMObject.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMBitReader.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMMCParser.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMTextAPI.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMProfileData.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMCore.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMRemarks.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMBitstreamReader.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMMC.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMBinaryFormat.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMDebugInfoMSF.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMSupport.a
+bin/llvm-microsoft-demangle-fuzzer: lib/libLLVMDemangle.a
+bin/llvm-microsoft-demangle-fuzzer: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-microsoft-demangle-fuzzer: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
 bin/llvm-microsoft-demangle-fuzzer: tools/llvm-microsoft-demangle-fuzzer/CMakeFiles/llvm-microsoft-demangle-fuzzer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../bin/llvm-microsoft-demangle-fuzzer"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-microsoft-demangle-fuzzer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-microsoft-demangle-fuzzer.dir/link.txt --verbose=$(VERBOSE)

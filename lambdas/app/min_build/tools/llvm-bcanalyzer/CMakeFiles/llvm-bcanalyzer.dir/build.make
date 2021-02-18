@@ -98,7 +98,17 @@ llvm__bcanalyzer_EXTERNAL_OBJECTS =
 
 bin/llvm-bcanalyzer: tools/llvm-bcanalyzer/CMakeFiles/llvm-bcanalyzer.dir/llvm-bcanalyzer.cpp.o
 bin/llvm-bcanalyzer: tools/llvm-bcanalyzer/CMakeFiles/llvm-bcanalyzer.dir/build.make
-bin/llvm-bcanalyzer: lib/libLLVM.dylib
+bin/llvm-bcanalyzer: lib/libLLVMBitReader.a
+bin/llvm-bcanalyzer: lib/libLLVMBitstreamReader.a
+bin/llvm-bcanalyzer: lib/libLLVMSupport.a
+bin/llvm-bcanalyzer: lib/libLLVMCore.a
+bin/llvm-bcanalyzer: lib/libLLVMBinaryFormat.a
+bin/llvm-bcanalyzer: lib/libLLVMRemarks.a
+bin/llvm-bcanalyzer: lib/libLLVMBitstreamReader.a
+bin/llvm-bcanalyzer: lib/libLLVMSupport.a
+bin/llvm-bcanalyzer: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-bcanalyzer: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-bcanalyzer: lib/libLLVMDemangle.a
 bin/llvm-bcanalyzer: tools/llvm-bcanalyzer/CMakeFiles/llvm-bcanalyzer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-bcanalyzer"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-bcanalyzer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-bcanalyzer.dir/link.txt --verbose=$(VERBOSE)

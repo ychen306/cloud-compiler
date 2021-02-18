@@ -98,7 +98,14 @@ llvm__mt_EXTERNAL_OBJECTS =
 
 bin/llvm-mt: tools/llvm-mt/CMakeFiles/llvm-mt.dir/llvm-mt.cpp.o
 bin/llvm-mt: tools/llvm-mt/CMakeFiles/llvm-mt.dir/build.make
-bin/llvm-mt: lib/libLLVM.dylib
+bin/llvm-mt: lib/libLLVMOption.a
+bin/llvm-mt: lib/libLLVMSupport.a
+bin/llvm-mt: lib/libLLVMWindowsManifest.a
+bin/llvm-mt: lib/libLLVMSupport.a
+bin/llvm-mt: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-mt: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-mt: lib/libLLVMDemangle.a
+bin/llvm-mt: /usr/lib/libxml2.dylib
 bin/llvm-mt: tools/llvm-mt/CMakeFiles/llvm-mt.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-mt"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-mt && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-mt.dir/link.txt --verbose=$(VERBOSE)

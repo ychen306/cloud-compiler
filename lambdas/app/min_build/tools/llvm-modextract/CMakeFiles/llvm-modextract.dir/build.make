@@ -98,7 +98,29 @@ llvm__modextract_EXTERNAL_OBJECTS =
 
 bin/llvm-modextract: tools/llvm-modextract/CMakeFiles/llvm-modextract.dir/llvm-modextract.cpp.o
 bin/llvm-modextract: tools/llvm-modextract/CMakeFiles/llvm-modextract.dir/build.make
-bin/llvm-modextract: lib/libLLVM.dylib
+bin/llvm-modextract: lib/libLLVMIRReader.a
+bin/llvm-modextract: lib/libLLVMBitReader.a
+bin/llvm-modextract: lib/libLLVMBitWriter.a
+bin/llvm-modextract: lib/libLLVMCore.a
+bin/llvm-modextract: lib/libLLVMSupport.a
+bin/llvm-modextract: lib/libLLVMAsmParser.a
+bin/llvm-modextract: lib/libLLVMAnalysis.a
+bin/llvm-modextract: lib/libLLVMProfileData.a
+bin/llvm-modextract: lib/libLLVMObject.a
+bin/llvm-modextract: lib/libLLVMBitReader.a
+bin/llvm-modextract: lib/libLLVMCore.a
+bin/llvm-modextract: lib/libLLVMRemarks.a
+bin/llvm-modextract: lib/libLLVMBitstreamReader.a
+bin/llvm-modextract: lib/libLLVMMCParser.a
+bin/llvm-modextract: lib/libLLVMMC.a
+bin/llvm-modextract: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-modextract: lib/libLLVMDebugInfoMSF.a
+bin/llvm-modextract: lib/libLLVMTextAPI.a
+bin/llvm-modextract: lib/libLLVMBinaryFormat.a
+bin/llvm-modextract: lib/libLLVMSupport.a
+bin/llvm-modextract: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-modextract: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-modextract: lib/libLLVMDemangle.a
 bin/llvm-modextract: tools/llvm-modextract/CMakeFiles/llvm-modextract.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-modextract"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-modextract && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-modextract.dir/link.txt --verbose=$(VERBOSE)

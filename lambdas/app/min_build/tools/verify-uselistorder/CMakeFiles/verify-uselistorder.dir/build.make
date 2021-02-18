@@ -98,7 +98,30 @@ verify__uselistorder_EXTERNAL_OBJECTS =
 
 bin/verify-uselistorder: tools/verify-uselistorder/CMakeFiles/verify-uselistorder.dir/verify-uselistorder.cpp.o
 bin/verify-uselistorder: tools/verify-uselistorder/CMakeFiles/verify-uselistorder.dir/build.make
-bin/verify-uselistorder: lib/libLLVM.dylib
+bin/verify-uselistorder: lib/libLLVMAsmParser.a
+bin/verify-uselistorder: lib/libLLVMBitReader.a
+bin/verify-uselistorder: lib/libLLVMBitWriter.a
+bin/verify-uselistorder: lib/libLLVMCore.a
+bin/verify-uselistorder: lib/libLLVMIRReader.a
+bin/verify-uselistorder: lib/libLLVMSupport.a
+bin/verify-uselistorder: lib/libLLVMAnalysis.a
+bin/verify-uselistorder: lib/libLLVMProfileData.a
+bin/verify-uselistorder: lib/libLLVMObject.a
+bin/verify-uselistorder: lib/libLLVMMCParser.a
+bin/verify-uselistorder: lib/libLLVMMC.a
+bin/verify-uselistorder: lib/libLLVMDebugInfoCodeView.a
+bin/verify-uselistorder: lib/libLLVMDebugInfoMSF.a
+bin/verify-uselistorder: lib/libLLVMTextAPI.a
+bin/verify-uselistorder: lib/libLLVMAsmParser.a
+bin/verify-uselistorder: lib/libLLVMBitReader.a
+bin/verify-uselistorder: lib/libLLVMCore.a
+bin/verify-uselistorder: lib/libLLVMBinaryFormat.a
+bin/verify-uselistorder: lib/libLLVMRemarks.a
+bin/verify-uselistorder: lib/libLLVMBitstreamReader.a
+bin/verify-uselistorder: lib/libLLVMSupport.a
+bin/verify-uselistorder: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/verify-uselistorder: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/verify-uselistorder: lib/libLLVMDemangle.a
 bin/verify-uselistorder: tools/verify-uselistorder/CMakeFiles/verify-uselistorder.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/verify-uselistorder"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/verify-uselistorder && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/verify-uselistorder.dir/link.txt --verbose=$(VERBOSE)

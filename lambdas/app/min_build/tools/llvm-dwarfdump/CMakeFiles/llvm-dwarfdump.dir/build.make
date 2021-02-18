@@ -128,7 +128,27 @@ bin/llvm-dwarfdump: tools/llvm-dwarfdump/CMakeFiles/llvm-dwarfdump.dir/SectionSi
 bin/llvm-dwarfdump: tools/llvm-dwarfdump/CMakeFiles/llvm-dwarfdump.dir/Statistics.cpp.o
 bin/llvm-dwarfdump: tools/llvm-dwarfdump/CMakeFiles/llvm-dwarfdump.dir/llvm-dwarfdump.cpp.o
 bin/llvm-dwarfdump: tools/llvm-dwarfdump/CMakeFiles/llvm-dwarfdump.dir/build.make
-bin/llvm-dwarfdump: lib/libLLVM.dylib
+bin/llvm-dwarfdump: lib/libLLVMDebugInfoDWARF.a
+bin/llvm-dwarfdump: lib/libLLVMX86Desc.a
+bin/llvm-dwarfdump: lib/libLLVMX86Info.a
+bin/llvm-dwarfdump: lib/libLLVMMC.a
+bin/llvm-dwarfdump: lib/libLLVMObject.a
+bin/llvm-dwarfdump: lib/libLLVMSupport.a
+bin/llvm-dwarfdump: lib/libLLVMBitReader.a
+bin/llvm-dwarfdump: lib/libLLVMCore.a
+bin/llvm-dwarfdump: lib/libLLVMRemarks.a
+bin/llvm-dwarfdump: lib/libLLVMBitstreamReader.a
+bin/llvm-dwarfdump: lib/libLLVMMCParser.a
+bin/llvm-dwarfdump: lib/libLLVMTextAPI.a
+bin/llvm-dwarfdump: lib/libLLVMMCDisassembler.a
+bin/llvm-dwarfdump: lib/libLLVMMC.a
+bin/llvm-dwarfdump: lib/libLLVMBinaryFormat.a
+bin/llvm-dwarfdump: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-dwarfdump: lib/libLLVMDebugInfoMSF.a
+bin/llvm-dwarfdump: lib/libLLVMSupport.a
+bin/llvm-dwarfdump: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-dwarfdump: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-dwarfdump: lib/libLLVMDemangle.a
 bin/llvm-dwarfdump: tools/llvm-dwarfdump/CMakeFiles/llvm-dwarfdump.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../../bin/llvm-dwarfdump"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-dwarfdump && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-dwarfdump.dir/link.txt --verbose=$(VERBOSE)

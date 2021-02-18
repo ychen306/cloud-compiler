@@ -98,7 +98,16 @@ llvm__dis_EXTERNAL_OBJECTS =
 
 bin/llvm-dis: tools/llvm-dis/CMakeFiles/llvm-dis.dir/llvm-dis.cpp.o
 bin/llvm-dis: tools/llvm-dis/CMakeFiles/llvm-dis.dir/build.make
-bin/llvm-dis: lib/libLLVM.dylib
+bin/llvm-dis: lib/libLLVMBitReader.a
+bin/llvm-dis: lib/libLLVMCore.a
+bin/llvm-dis: lib/libLLVMSupport.a
+bin/llvm-dis: lib/libLLVMBinaryFormat.a
+bin/llvm-dis: lib/libLLVMRemarks.a
+bin/llvm-dis: lib/libLLVMBitstreamReader.a
+bin/llvm-dis: lib/libLLVMSupport.a
+bin/llvm-dis: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-dis: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-dis: lib/libLLVMDemangle.a
 bin/llvm-dis: tools/llvm-dis/CMakeFiles/llvm-dis.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-dis"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-dis && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-dis.dir/link.txt --verbose=$(VERBOSE)

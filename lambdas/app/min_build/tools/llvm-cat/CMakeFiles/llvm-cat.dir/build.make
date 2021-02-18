@@ -98,7 +98,29 @@ llvm__cat_EXTERNAL_OBJECTS =
 
 bin/llvm-cat: tools/llvm-cat/CMakeFiles/llvm-cat.dir/llvm-cat.cpp.o
 bin/llvm-cat: tools/llvm-cat/CMakeFiles/llvm-cat.dir/build.make
-bin/llvm-cat: lib/libLLVM.dylib
+bin/llvm-cat: lib/libLLVMIRReader.a
+bin/llvm-cat: lib/libLLVMBitReader.a
+bin/llvm-cat: lib/libLLVMBitWriter.a
+bin/llvm-cat: lib/libLLVMCore.a
+bin/llvm-cat: lib/libLLVMSupport.a
+bin/llvm-cat: lib/libLLVMAsmParser.a
+bin/llvm-cat: lib/libLLVMAnalysis.a
+bin/llvm-cat: lib/libLLVMProfileData.a
+bin/llvm-cat: lib/libLLVMObject.a
+bin/llvm-cat: lib/libLLVMBitReader.a
+bin/llvm-cat: lib/libLLVMCore.a
+bin/llvm-cat: lib/libLLVMRemarks.a
+bin/llvm-cat: lib/libLLVMBitstreamReader.a
+bin/llvm-cat: lib/libLLVMMCParser.a
+bin/llvm-cat: lib/libLLVMMC.a
+bin/llvm-cat: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-cat: lib/libLLVMDebugInfoMSF.a
+bin/llvm-cat: lib/libLLVMTextAPI.a
+bin/llvm-cat: lib/libLLVMBinaryFormat.a
+bin/llvm-cat: lib/libLLVMSupport.a
+bin/llvm-cat: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-cat: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-cat: lib/libLLVMDemangle.a
 bin/llvm-cat: tools/llvm-cat/CMakeFiles/llvm-cat.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-cat"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-cat && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-cat.dir/link.txt --verbose=$(VERBOSE)

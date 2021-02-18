@@ -98,7 +98,12 @@ Remarks_EXTERNAL_OBJECTS =
 
 lib/libRemarks.dylib: tools/remarks-shlib/CMakeFiles/Remarks.dir/libremarks.cpp.o
 lib/libRemarks.dylib: tools/remarks-shlib/CMakeFiles/Remarks.dir/build.make
-lib/libRemarks.dylib: lib/libLLVM.dylib
+lib/libRemarks.dylib: lib/libLLVMRemarks.a
+lib/libRemarks.dylib: lib/libLLVMBitstreamReader.a
+lib/libRemarks.dylib: lib/libLLVMSupport.a
+lib/libRemarks.dylib: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+lib/libRemarks.dylib: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+lib/libRemarks.dylib: lib/libLLVMDemangle.a
 lib/libRemarks.dylib: tools/remarks-shlib/CMakeFiles/Remarks.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library ../../lib/libRemarks.dylib"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/remarks-shlib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Remarks.dir/link.txt --verbose=$(VERBOSE)

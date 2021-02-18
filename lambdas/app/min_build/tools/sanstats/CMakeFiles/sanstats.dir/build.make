@@ -98,7 +98,25 @@ sanstats_EXTERNAL_OBJECTS =
 
 bin/sanstats: tools/sanstats/CMakeFiles/sanstats.dir/sanstats.cpp.o
 bin/sanstats: tools/sanstats/CMakeFiles/sanstats.dir/build.make
-bin/sanstats: lib/libLLVM.dylib
+bin/sanstats: lib/libLLVMSupport.a
+bin/sanstats: lib/libLLVMSymbolize.a
+bin/sanstats: lib/libLLVMDebugInfoDWARF.a
+bin/sanstats: lib/libLLVMDebugInfoPDB.a
+bin/sanstats: lib/libLLVMObject.a
+bin/sanstats: lib/libLLVMBitReader.a
+bin/sanstats: lib/libLLVMCore.a
+bin/sanstats: lib/libLLVMRemarks.a
+bin/sanstats: lib/libLLVMBitstreamReader.a
+bin/sanstats: lib/libLLVMMCParser.a
+bin/sanstats: lib/libLLVMMC.a
+bin/sanstats: lib/libLLVMDebugInfoCodeView.a
+bin/sanstats: lib/libLLVMDebugInfoMSF.a
+bin/sanstats: lib/libLLVMTextAPI.a
+bin/sanstats: lib/libLLVMBinaryFormat.a
+bin/sanstats: lib/libLLVMSupport.a
+bin/sanstats: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/sanstats: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/sanstats: lib/libLLVMDemangle.a
 bin/sanstats: tools/sanstats/CMakeFiles/sanstats.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/sanstats"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/sanstats && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sanstats.dir/link.txt --verbose=$(VERBOSE)

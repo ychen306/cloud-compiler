@@ -173,7 +173,11 @@ bin/llvm-rc: tools/llvm-rc/CMakeFiles/llvm-rc.dir/ResourceScriptParser.cpp.o
 bin/llvm-rc: tools/llvm-rc/CMakeFiles/llvm-rc.dir/ResourceScriptStmt.cpp.o
 bin/llvm-rc: tools/llvm-rc/CMakeFiles/llvm-rc.dir/ResourceScriptToken.cpp.o
 bin/llvm-rc: tools/llvm-rc/CMakeFiles/llvm-rc.dir/build.make
-bin/llvm-rc: lib/libLLVM.dylib
+bin/llvm-rc: lib/libLLVMOption.a
+bin/llvm-rc: lib/libLLVMSupport.a
+bin/llvm-rc: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-rc: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-rc: lib/libLLVMDemangle.a
 bin/llvm-rc: tools/llvm-rc/CMakeFiles/llvm-rc.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ../../bin/llvm-rc"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-rc && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-rc.dir/link.txt --verbose=$(VERBOSE)

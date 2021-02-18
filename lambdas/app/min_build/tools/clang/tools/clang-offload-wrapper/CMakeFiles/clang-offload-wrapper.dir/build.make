@@ -98,8 +98,28 @@ clang__offload__wrapper_EXTERNAL_OBJECTS =
 
 bin/clang-offload-wrapper: tools/clang/tools/clang-offload-wrapper/CMakeFiles/clang-offload-wrapper.dir/ClangOffloadWrapper.cpp.o
 bin/clang-offload-wrapper: tools/clang/tools/clang-offload-wrapper/CMakeFiles/clang-offload-wrapper.dir/build.make
-bin/clang-offload-wrapper: lib/libclang-cpp.dylib
-bin/clang-offload-wrapper: lib/libLLVM.dylib
+bin/clang-offload-wrapper: lib/libLLVMBitWriter.a
+bin/clang-offload-wrapper: lib/libLLVMCore.a
+bin/clang-offload-wrapper: lib/libLLVMSupport.a
+bin/clang-offload-wrapper: lib/libLLVMTransformUtils.a
+bin/clang-offload-wrapper: lib/libclangBasic.a
+bin/clang-offload-wrapper: lib/libLLVMAnalysis.a
+bin/clang-offload-wrapper: lib/libLLVMObject.a
+bin/clang-offload-wrapper: lib/libLLVMBitReader.a
+bin/clang-offload-wrapper: lib/libLLVMMCParser.a
+bin/clang-offload-wrapper: lib/libLLVMTextAPI.a
+bin/clang-offload-wrapper: lib/libLLVMProfileData.a
+bin/clang-offload-wrapper: lib/libLLVMCore.a
+bin/clang-offload-wrapper: lib/libLLVMRemarks.a
+bin/clang-offload-wrapper: lib/libLLVMBitstreamReader.a
+bin/clang-offload-wrapper: lib/libLLVMMC.a
+bin/clang-offload-wrapper: lib/libLLVMBinaryFormat.a
+bin/clang-offload-wrapper: lib/libLLVMDebugInfoCodeView.a
+bin/clang-offload-wrapper: lib/libLLVMDebugInfoMSF.a
+bin/clang-offload-wrapper: lib/libLLVMSupport.a
+bin/clang-offload-wrapper: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/clang-offload-wrapper: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/clang-offload-wrapper: lib/libLLVMDemangle.a
 bin/clang-offload-wrapper: tools/clang/tools/clang-offload-wrapper/CMakeFiles/clang-offload-wrapper.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../../bin/clang-offload-wrapper"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/clang/tools/clang-offload-wrapper && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/clang-offload-wrapper.dir/link.txt --verbose=$(VERBOSE)

@@ -248,7 +248,28 @@ bin/llvm-xray: tools/llvm-xray/CMakeFiles/llvm-xray.dir/xray-graph.cpp.o
 bin/llvm-xray: tools/llvm-xray/CMakeFiles/llvm-xray.dir/xray-registry.cpp.o
 bin/llvm-xray: tools/llvm-xray/CMakeFiles/llvm-xray.dir/xray-stacks.cpp.o
 bin/llvm-xray: tools/llvm-xray/CMakeFiles/llvm-xray.dir/build.make
-bin/llvm-xray: lib/libLLVM.dylib
+bin/llvm-xray: lib/libLLVMDebugInfoDWARF.a
+bin/llvm-xray: lib/libLLVMObject.a
+bin/llvm-xray: lib/libLLVMSupport.a
+bin/llvm-xray: lib/libLLVMSymbolize.a
+bin/llvm-xray: lib/libLLVMXRay.a
+bin/llvm-xray: lib/libLLVMDebugInfoDWARF.a
+bin/llvm-xray: lib/libLLVMDebugInfoPDB.a
+bin/llvm-xray: lib/libLLVMObject.a
+bin/llvm-xray: lib/libLLVMBitReader.a
+bin/llvm-xray: lib/libLLVMCore.a
+bin/llvm-xray: lib/libLLVMRemarks.a
+bin/llvm-xray: lib/libLLVMBitstreamReader.a
+bin/llvm-xray: lib/libLLVMMCParser.a
+bin/llvm-xray: lib/libLLVMMC.a
+bin/llvm-xray: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-xray: lib/libLLVMDebugInfoMSF.a
+bin/llvm-xray: lib/libLLVMTextAPI.a
+bin/llvm-xray: lib/libLLVMBinaryFormat.a
+bin/llvm-xray: lib/libLLVMSupport.a
+bin/llvm-xray: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-xray: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-xray: lib/libLLVMDemangle.a
 bin/llvm-xray: tools/llvm-xray/CMakeFiles/llvm-xray.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable ../../bin/llvm-xray"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-xray && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-xray.dir/link.txt --verbose=$(VERBOSE)

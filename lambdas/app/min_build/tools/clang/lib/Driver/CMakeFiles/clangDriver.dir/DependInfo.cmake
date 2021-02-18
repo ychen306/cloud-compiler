@@ -6,7 +6,17 @@ set(CMAKE_DEPENDS_LANGUAGES
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/clang/lib/Basic/CMakeFiles/clangBasic.dir/DependInfo.cmake"
-  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-shlib/CMakeFiles/LLVM.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/BinaryFormat/CMakeFiles/LLVMBinaryFormat.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/Option/CMakeFiles/LLVMOption.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/ProfileData/CMakeFiles/LLVMProfileData.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/Support/CMakeFiles/LLVMSupport.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/MC/CMakeFiles/LLVMMC.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/DebugInfo/CodeView/CMakeFiles/LLVMDebugInfoCodeView.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/DebugInfo/MSF/CMakeFiles/LLVMDebugInfoMSF.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/IR/CMakeFiles/LLVMCore.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/Remarks/CMakeFiles/LLVMRemarks.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/Bitstream/Reader/CMakeFiles/LLVMBitstreamReader.dir/DependInfo.cmake"
+  "/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/Demangle/CMakeFiles/LLVMDemangle.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -98,8 +98,20 @@ apinotes__test_EXTERNAL_OBJECTS =
 
 bin/apinotes-test: tools/clang/tools/apinotes-test/CMakeFiles/apinotes-test.dir/APINotesTest.cpp.o
 bin/apinotes-test: tools/clang/tools/apinotes-test/CMakeFiles/apinotes-test.dir/build.make
-bin/apinotes-test: lib/libclang-cpp.dylib
-bin/apinotes-test: lib/libLLVM.dylib
+bin/apinotes-test: lib/libLLVMSupport.a
+bin/apinotes-test: lib/libclangAPINotes.a
+bin/apinotes-test: lib/libclangBasic.a
+bin/apinotes-test: lib/libLLVMCore.a
+bin/apinotes-test: lib/libLLVMRemarks.a
+bin/apinotes-test: lib/libLLVMBitstreamReader.a
+bin/apinotes-test: lib/libLLVMMC.a
+bin/apinotes-test: lib/libLLVMBinaryFormat.a
+bin/apinotes-test: lib/libLLVMDebugInfoCodeView.a
+bin/apinotes-test: lib/libLLVMDebugInfoMSF.a
+bin/apinotes-test: lib/libLLVMSupport.a
+bin/apinotes-test: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/apinotes-test: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/apinotes-test: lib/libLLVMDemangle.a
 bin/apinotes-test: tools/clang/tools/apinotes-test/CMakeFiles/apinotes-test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../../bin/apinotes-test"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/clang/tools/apinotes-test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/apinotes-test.dir/link.txt --verbose=$(VERBOSE)

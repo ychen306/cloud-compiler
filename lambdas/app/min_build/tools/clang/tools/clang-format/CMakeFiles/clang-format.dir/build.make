@@ -98,8 +98,27 @@ clang__format_EXTERNAL_OBJECTS =
 
 bin/clang-format: tools/clang/tools/clang-format/CMakeFiles/clang-format.dir/ClangFormat.cpp.o
 bin/clang-format: tools/clang/tools/clang-format/CMakeFiles/clang-format.dir/build.make
-bin/clang-format: lib/libclang-cpp.dylib
-bin/clang-format: lib/libLLVM.dylib
+bin/clang-format: lib/libLLVMSupport.a
+bin/clang-format: lib/libclangBasic.a
+bin/clang-format: lib/libclangFormat.a
+bin/clang-format: lib/libclangRewrite.a
+bin/clang-format: lib/libclangToolingCore.a
+bin/clang-format: lib/libclangToolingInclusions.a
+bin/clang-format: lib/libclangToolingCore.a
+bin/clang-format: lib/libclangRewrite.a
+bin/clang-format: lib/libclangLex.a
+bin/clang-format: lib/libclangBasic.a
+bin/clang-format: lib/libLLVMCore.a
+bin/clang-format: lib/libLLVMRemarks.a
+bin/clang-format: lib/libLLVMBitstreamReader.a
+bin/clang-format: lib/libLLVMMC.a
+bin/clang-format: lib/libLLVMBinaryFormat.a
+bin/clang-format: lib/libLLVMDebugInfoCodeView.a
+bin/clang-format: lib/libLLVMDebugInfoMSF.a
+bin/clang-format: lib/libLLVMSupport.a
+bin/clang-format: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/clang-format: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/clang-format: lib/libLLVMDemangle.a
 bin/clang-format: tools/clang/tools/clang-format/CMakeFiles/clang-format.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../../bin/clang-format"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/clang/tools/clang-format && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/clang-format.dir/link.txt --verbose=$(VERBOSE)

@@ -98,7 +98,44 @@ llvm__link_EXTERNAL_OBJECTS =
 
 bin/llvm-link: tools/llvm-link/CMakeFiles/llvm-link.dir/llvm-link.cpp.o
 bin/llvm-link: tools/llvm-link/CMakeFiles/llvm-link.dir/build.make
-bin/llvm-link: lib/libLLVM.dylib
+bin/llvm-link: lib/libLLVMBinaryFormat.a
+bin/llvm-link: lib/libLLVMBitReader.a
+bin/llvm-link: lib/libLLVMBitWriter.a
+bin/llvm-link: lib/libLLVMCore.a
+bin/llvm-link: lib/libLLVMIRReader.a
+bin/llvm-link: lib/libLLVMLinker.a
+bin/llvm-link: lib/libLLVMObject.a
+bin/llvm-link: lib/libLLVMSupport.a
+bin/llvm-link: lib/libLLVMTransformUtils.a
+bin/llvm-link: lib/libLLVMipo.a
+bin/llvm-link: lib/libLLVMBitWriter.a
+bin/llvm-link: lib/libLLVMIRReader.a
+bin/llvm-link: lib/libLLVMAsmParser.a
+bin/llvm-link: lib/libLLVMLinker.a
+bin/llvm-link: lib/libLLVMFrontendOpenMP.a
+bin/llvm-link: lib/libLLVMScalarOpts.a
+bin/llvm-link: lib/libLLVMAggressiveInstCombine.a
+bin/llvm-link: lib/libLLVMInstCombine.a
+bin/llvm-link: lib/libLLVMVectorize.a
+bin/llvm-link: lib/libLLVMInstrumentation.a
+bin/llvm-link: lib/libLLVMTransformUtils.a
+bin/llvm-link: lib/libLLVMAnalysis.a
+bin/llvm-link: lib/libLLVMObject.a
+bin/llvm-link: lib/libLLVMBitReader.a
+bin/llvm-link: lib/libLLVMMCParser.a
+bin/llvm-link: lib/libLLVMTextAPI.a
+bin/llvm-link: lib/libLLVMMC.a
+bin/llvm-link: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-link: lib/libLLVMDebugInfoMSF.a
+bin/llvm-link: lib/libLLVMProfileData.a
+bin/llvm-link: lib/libLLVMCore.a
+bin/llvm-link: lib/libLLVMBinaryFormat.a
+bin/llvm-link: lib/libLLVMRemarks.a
+bin/llvm-link: lib/libLLVMBitstreamReader.a
+bin/llvm-link: lib/libLLVMSupport.a
+bin/llvm-link: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-link: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-link: lib/libLLVMDemangle.a
 bin/llvm-link: tools/llvm-link/CMakeFiles/llvm-link.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-link"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-link && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-link.dir/link.txt --verbose=$(VERBOSE)

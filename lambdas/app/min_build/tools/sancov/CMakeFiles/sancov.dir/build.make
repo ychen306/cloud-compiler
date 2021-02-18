@@ -98,7 +98,33 @@ sancov_EXTERNAL_OBJECTS =
 
 bin/sancov: tools/sancov/CMakeFiles/sancov.dir/sancov.cpp.o
 bin/sancov: tools/sancov/CMakeFiles/sancov.dir/build.make
-bin/sancov: lib/libLLVM.dylib
+bin/sancov: lib/libLLVMX86Desc.a
+bin/sancov: lib/libLLVMX86Disassembler.a
+bin/sancov: lib/libLLVMX86Info.a
+bin/sancov: lib/libLLVMDebugInfoDWARF.a
+bin/sancov: lib/libLLVMDebugInfoPDB.a
+bin/sancov: lib/libLLVMMC.a
+bin/sancov: lib/libLLVMMCDisassembler.a
+bin/sancov: lib/libLLVMObject.a
+bin/sancov: lib/libLLVMSupport.a
+bin/sancov: lib/libLLVMSymbolize.a
+bin/sancov: lib/libLLVMDebugInfoDWARF.a
+bin/sancov: lib/libLLVMDebugInfoPDB.a
+bin/sancov: lib/libLLVMObject.a
+bin/sancov: lib/libLLVMBitReader.a
+bin/sancov: lib/libLLVMCore.a
+bin/sancov: lib/libLLVMRemarks.a
+bin/sancov: lib/libLLVMBitstreamReader.a
+bin/sancov: lib/libLLVMMCParser.a
+bin/sancov: lib/libLLVMMC.a
+bin/sancov: lib/libLLVMDebugInfoCodeView.a
+bin/sancov: lib/libLLVMDebugInfoMSF.a
+bin/sancov: lib/libLLVMTextAPI.a
+bin/sancov: lib/libLLVMBinaryFormat.a
+bin/sancov: lib/libLLVMSupport.a
+bin/sancov: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/sancov: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/sancov: lib/libLLVMDemangle.a
 bin/sancov: tools/sancov/CMakeFiles/sancov.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/sancov"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/sancov && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sancov.dir/link.txt --verbose=$(VERBOSE)

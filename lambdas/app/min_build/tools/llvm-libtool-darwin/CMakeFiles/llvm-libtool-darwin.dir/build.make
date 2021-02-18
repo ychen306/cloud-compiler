@@ -98,7 +98,24 @@ llvm__libtool__darwin_EXTERNAL_OBJECTS =
 
 bin/llvm-libtool-darwin: tools/llvm-libtool-darwin/CMakeFiles/llvm-libtool-darwin.dir/llvm-libtool-darwin.cpp.o
 bin/llvm-libtool-darwin: tools/llvm-libtool-darwin/CMakeFiles/llvm-libtool-darwin.dir/build.make
-bin/llvm-libtool-darwin: lib/libLLVM.dylib
+bin/llvm-libtool-darwin: lib/libLLVMBinaryFormat.a
+bin/llvm-libtool-darwin: lib/libLLVMCore.a
+bin/llvm-libtool-darwin: lib/libLLVMObject.a
+bin/llvm-libtool-darwin: lib/libLLVMSupport.a
+bin/llvm-libtool-darwin: lib/libLLVMTextAPI.a
+bin/llvm-libtool-darwin: lib/libLLVMBitReader.a
+bin/llvm-libtool-darwin: lib/libLLVMCore.a
+bin/llvm-libtool-darwin: lib/libLLVMRemarks.a
+bin/llvm-libtool-darwin: lib/libLLVMBitstreamReader.a
+bin/llvm-libtool-darwin: lib/libLLVMMCParser.a
+bin/llvm-libtool-darwin: lib/libLLVMMC.a
+bin/llvm-libtool-darwin: lib/libLLVMBinaryFormat.a
+bin/llvm-libtool-darwin: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-libtool-darwin: lib/libLLVMDebugInfoMSF.a
+bin/llvm-libtool-darwin: lib/libLLVMSupport.a
+bin/llvm-libtool-darwin: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-libtool-darwin: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-libtool-darwin: lib/libLLVMDemangle.a
 bin/llvm-libtool-darwin: tools/llvm-libtool-darwin/CMakeFiles/llvm-libtool-darwin.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-libtool-darwin"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-libtool-darwin && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-libtool-darwin.dir/link.txt --verbose=$(VERBOSE)

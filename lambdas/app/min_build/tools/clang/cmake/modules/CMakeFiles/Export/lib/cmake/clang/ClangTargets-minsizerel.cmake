@@ -450,7 +450,6 @@ list(APPEND _IMPORT_CHECK_FILES_FOR_clang-refactor "${_IMPORT_PREFIX}/bin/clang-
 # Import target "clang-cpp" for configuration "MinSizeRel"
 set_property(TARGET clang-cpp APPEND PROPERTY IMPORTED_CONFIGURATIONS MINSIZEREL)
 set_target_properties(clang-cpp PROPERTIES
-  IMPORTED_LINK_DEPENDENT_LIBRARIES_MINSIZEREL "LLVM"
   IMPORTED_LOCATION_MINSIZEREL "${_IMPORT_PREFIX}/lib/libclang-cpp.dylib"
   IMPORTED_SONAME_MINSIZEREL "@rpath/libclang-cpp.dylib"
   )
@@ -479,7 +478,6 @@ list(APPEND _IMPORT_CHECK_FILES_FOR_clang-extdef-mapping "${_IMPORT_PREFIX}/bin/
 # Import target "libclang" for configuration "MinSizeRel"
 set_property(TARGET libclang APPEND PROPERTY IMPORTED_CONFIGURATIONS MINSIZEREL)
 set_target_properties(libclang PROPERTIES
-  IMPORTED_LINK_DEPENDENT_LIBRARIES_MINSIZEREL "LLVM"
   IMPORTED_LOCATION_MINSIZEREL "${_IMPORT_PREFIX}/lib/libclang.dylib"
   IMPORTED_SONAME_MINSIZEREL "@rpath/libclang.dylib"
   )

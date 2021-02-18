@@ -27,8 +27,8 @@
 #define LLVM_SYSTEM_LIBS "-lm -lz -lcurses -lxml2"
 #define LLVM_BUILD_SYSTEM "cmake"
 #define LLVM_HAS_RTTI 0
-#define LLVM_ENABLE_DYLIB 1
-#define LLVM_LINK_DYLIB 1
+#define LLVM_ENABLE_DYLIB 0
+#define LLVM_LINK_DYLIB 0
 #define LLVM_ENABLE_SHARED 0
 #define LLVM_DYLIB_COMPONENTS "all"
 #define LLVM_DYLIB_VERSION "12git"

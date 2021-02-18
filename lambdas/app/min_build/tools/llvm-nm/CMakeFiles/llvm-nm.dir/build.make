@@ -98,7 +98,29 @@ llvm__nm_EXTERNAL_OBJECTS =
 
 bin/llvm-nm: tools/llvm-nm/CMakeFiles/llvm-nm.dir/llvm-nm.cpp.o
 bin/llvm-nm: tools/llvm-nm/CMakeFiles/llvm-nm.dir/build.make
-bin/llvm-nm: lib/libLLVM.dylib
+bin/llvm-nm: lib/libLLVMX86AsmParser.a
+bin/llvm-nm: lib/libLLVMX86Desc.a
+bin/llvm-nm: lib/libLLVMX86Info.a
+bin/llvm-nm: lib/libLLVMBinaryFormat.a
+bin/llvm-nm: lib/libLLVMCore.a
+bin/llvm-nm: lib/libLLVMDemangle.a
+bin/llvm-nm: lib/libLLVMObject.a
+bin/llvm-nm: lib/libLLVMSupport.a
+bin/llvm-nm: lib/libLLVMTextAPI.a
+bin/llvm-nm: lib/libLLVMMCDisassembler.a
+bin/llvm-nm: lib/libLLVMMCParser.a
+bin/llvm-nm: lib/libLLVMMC.a
+bin/llvm-nm: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-nm: lib/libLLVMDebugInfoMSF.a
+bin/llvm-nm: lib/libLLVMBitReader.a
+bin/llvm-nm: lib/libLLVMCore.a
+bin/llvm-nm: lib/libLLVMBinaryFormat.a
+bin/llvm-nm: lib/libLLVMRemarks.a
+bin/llvm-nm: lib/libLLVMBitstreamReader.a
+bin/llvm-nm: lib/libLLVMSupport.a
+bin/llvm-nm: lib/libLLVMDemangle.a
+bin/llvm-nm: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-nm: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
 bin/llvm-nm: tools/llvm-nm/CMakeFiles/llvm-nm.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-nm"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-nm && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-nm.dir/link.txt --verbose=$(VERBOSE)

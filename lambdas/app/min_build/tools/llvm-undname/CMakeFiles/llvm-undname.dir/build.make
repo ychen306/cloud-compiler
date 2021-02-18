@@ -98,7 +98,11 @@ llvm__undname_EXTERNAL_OBJECTS =
 
 bin/llvm-undname: tools/llvm-undname/CMakeFiles/llvm-undname.dir/llvm-undname.cpp.o
 bin/llvm-undname: tools/llvm-undname/CMakeFiles/llvm-undname.dir/build.make
-bin/llvm-undname: lib/libLLVM.dylib
+bin/llvm-undname: lib/libLLVMDemangle.a
+bin/llvm-undname: lib/libLLVMSupport.a
+bin/llvm-undname: lib/libLLVMDemangle.a
+bin/llvm-undname: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-undname: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
 bin/llvm-undname: tools/llvm-undname/CMakeFiles/llvm-undname.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-undname"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-undname && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-undname.dir/link.txt --verbose=$(VERBOSE)

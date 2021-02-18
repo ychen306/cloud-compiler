@@ -98,7 +98,11 @@ llvm__cxxfilt_EXTERNAL_OBJECTS =
 
 bin/llvm-cxxfilt: tools/llvm-cxxfilt/CMakeFiles/llvm-cxxfilt.dir/llvm-cxxfilt.cpp.o
 bin/llvm-cxxfilt: tools/llvm-cxxfilt/CMakeFiles/llvm-cxxfilt.dir/build.make
-bin/llvm-cxxfilt: lib/libLLVM.dylib
+bin/llvm-cxxfilt: lib/libLLVMDemangle.a
+bin/llvm-cxxfilt: lib/libLLVMSupport.a
+bin/llvm-cxxfilt: lib/libLLVMDemangle.a
+bin/llvm-cxxfilt: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-cxxfilt: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
 bin/llvm-cxxfilt: tools/llvm-cxxfilt/CMakeFiles/llvm-cxxfilt.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-cxxfilt"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-cxxfilt && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-cxxfilt.dir/link.txt --verbose=$(VERBOSE)

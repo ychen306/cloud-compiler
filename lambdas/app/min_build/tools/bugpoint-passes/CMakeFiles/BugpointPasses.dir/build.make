@@ -98,7 +98,6 @@ BugpointPasses_EXTERNAL_OBJECTS =
 
 lib/BugpointPasses.dylib: tools/bugpoint-passes/CMakeFiles/BugpointPasses.dir/TestPasses.cpp.o
 lib/BugpointPasses.dylib: tools/bugpoint-passes/CMakeFiles/BugpointPasses.dir/build.make
-lib/BugpointPasses.dylib: lib/libLLVM.dylib
 lib/BugpointPasses.dylib: tools/bugpoint-passes/CMakeFiles/BugpointPasses.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module ../../lib/BugpointPasses.dylib"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/bugpoint-passes && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BugpointPasses.dir/link.txt --verbose=$(VERBOSE)

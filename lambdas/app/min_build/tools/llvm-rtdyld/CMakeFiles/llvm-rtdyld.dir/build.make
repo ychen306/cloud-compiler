@@ -98,7 +98,34 @@ llvm__rtdyld_EXTERNAL_OBJECTS =
 
 bin/llvm-rtdyld: tools/llvm-rtdyld/CMakeFiles/llvm-rtdyld.dir/llvm-rtdyld.cpp.o
 bin/llvm-rtdyld: tools/llvm-rtdyld/CMakeFiles/llvm-rtdyld.dir/build.make
-bin/llvm-rtdyld: lib/libLLVM.dylib
+bin/llvm-rtdyld: lib/libLLVMX86Disassembler.a
+bin/llvm-rtdyld: lib/libLLVMX86Desc.a
+bin/llvm-rtdyld: lib/libLLVMX86Info.a
+bin/llvm-rtdyld: lib/libLLVMDebugInfoDWARF.a
+bin/llvm-rtdyld: lib/libLLVMExecutionEngine.a
+bin/llvm-rtdyld: lib/libLLVMMC.a
+bin/llvm-rtdyld: lib/libLLVMObject.a
+bin/llvm-rtdyld: lib/libLLVMRuntimeDyld.a
+bin/llvm-rtdyld: lib/libLLVMSupport.a
+bin/llvm-rtdyld: lib/libLLVMMCDisassembler.a
+bin/llvm-rtdyld: lib/libLLVMTarget.a
+bin/llvm-rtdyld: lib/libLLVMAnalysis.a
+bin/llvm-rtdyld: lib/libLLVMObject.a
+bin/llvm-rtdyld: lib/libLLVMBitReader.a
+bin/llvm-rtdyld: lib/libLLVMMCParser.a
+bin/llvm-rtdyld: lib/libLLVMMC.a
+bin/llvm-rtdyld: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-rtdyld: lib/libLLVMDebugInfoMSF.a
+bin/llvm-rtdyld: lib/libLLVMTextAPI.a
+bin/llvm-rtdyld: lib/libLLVMProfileData.a
+bin/llvm-rtdyld: lib/libLLVMCore.a
+bin/llvm-rtdyld: lib/libLLVMBinaryFormat.a
+bin/llvm-rtdyld: lib/libLLVMRemarks.a
+bin/llvm-rtdyld: lib/libLLVMBitstreamReader.a
+bin/llvm-rtdyld: lib/libLLVMSupport.a
+bin/llvm-rtdyld: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-rtdyld: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-rtdyld: lib/libLLVMDemangle.a
 bin/llvm-rtdyld: tools/llvm-rtdyld/CMakeFiles/llvm-rtdyld.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-rtdyld"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-rtdyld && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-rtdyld.dir/link.txt --verbose=$(VERBOSE)

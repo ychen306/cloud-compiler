@@ -98,8 +98,35 @@ llvm__cfi__verify_EXTERNAL_OBJECTS =
 
 bin/llvm-cfi-verify: tools/llvm-cfi-verify/CMakeFiles/llvm-cfi-verify.dir/llvm-cfi-verify.cpp.o
 bin/llvm-cfi-verify: tools/llvm-cfi-verify/CMakeFiles/llvm-cfi-verify.dir/build.make
+bin/llvm-cfi-verify: lib/libLLVMX86AsmParser.a
+bin/llvm-cfi-verify: lib/libLLVMX86Desc.a
+bin/llvm-cfi-verify: lib/libLLVMX86Disassembler.a
+bin/llvm-cfi-verify: lib/libLLVMX86Info.a
+bin/llvm-cfi-verify: lib/libLLVMMC.a
+bin/llvm-cfi-verify: lib/libLLVMMCParser.a
+bin/llvm-cfi-verify: lib/libLLVMObject.a
+bin/llvm-cfi-verify: lib/libLLVMSupport.a
+bin/llvm-cfi-verify: lib/libLLVMSymbolize.a
 bin/llvm-cfi-verify: lib/libLLVMCFIVerify.a
-bin/llvm-cfi-verify: lib/libLLVM.dylib
+bin/llvm-cfi-verify: lib/libLLVMMCDisassembler.a
+bin/llvm-cfi-verify: lib/libLLVMSymbolize.a
+bin/llvm-cfi-verify: lib/libLLVMDebugInfoPDB.a
+bin/llvm-cfi-verify: lib/libLLVMDebugInfoDWARF.a
+bin/llvm-cfi-verify: lib/libLLVMObject.a
+bin/llvm-cfi-verify: lib/libLLVMMCParser.a
+bin/llvm-cfi-verify: lib/libLLVMMC.a
+bin/llvm-cfi-verify: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-cfi-verify: lib/libLLVMDebugInfoMSF.a
+bin/llvm-cfi-verify: lib/libLLVMBitReader.a
+bin/llvm-cfi-verify: lib/libLLVMCore.a
+bin/llvm-cfi-verify: lib/libLLVMRemarks.a
+bin/llvm-cfi-verify: lib/libLLVMBitstreamReader.a
+bin/llvm-cfi-verify: lib/libLLVMTextAPI.a
+bin/llvm-cfi-verify: lib/libLLVMBinaryFormat.a
+bin/llvm-cfi-verify: lib/libLLVMSupport.a
+bin/llvm-cfi-verify: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-cfi-verify: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-cfi-verify: lib/libLLVMDemangle.a
 bin/llvm-cfi-verify: tools/llvm-cfi-verify/CMakeFiles/llvm-cfi-verify.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-cfi-verify"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-cfi-verify && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-cfi-verify.dir/link.txt --verbose=$(VERBOSE)

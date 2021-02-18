@@ -368,7 +368,24 @@ bin/llvm-objcopy: tools/llvm-objcopy/CMakeFiles/llvm-objcopy.dir/wasm/Reader.cpp
 bin/llvm-objcopy: tools/llvm-objcopy/CMakeFiles/llvm-objcopy.dir/wasm/Writer.cpp.o
 bin/llvm-objcopy: tools/llvm-objcopy/CMakeFiles/llvm-objcopy.dir/wasm/WasmObjcopy.cpp.o
 bin/llvm-objcopy: tools/llvm-objcopy/CMakeFiles/llvm-objcopy.dir/build.make
-bin/llvm-objcopy: lib/libLLVM.dylib
+bin/llvm-objcopy: lib/libLLVMObject.a
+bin/llvm-objcopy: lib/libLLVMOption.a
+bin/llvm-objcopy: lib/libLLVMSupport.a
+bin/llvm-objcopy: lib/libLLVMMC.a
+bin/llvm-objcopy: lib/libLLVMBitReader.a
+bin/llvm-objcopy: lib/libLLVMCore.a
+bin/llvm-objcopy: lib/libLLVMRemarks.a
+bin/llvm-objcopy: lib/libLLVMBitstreamReader.a
+bin/llvm-objcopy: lib/libLLVMMCParser.a
+bin/llvm-objcopy: lib/libLLVMMC.a
+bin/llvm-objcopy: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-objcopy: lib/libLLVMDebugInfoMSF.a
+bin/llvm-objcopy: lib/libLLVMTextAPI.a
+bin/llvm-objcopy: lib/libLLVMBinaryFormat.a
+bin/llvm-objcopy: lib/libLLVMSupport.a
+bin/llvm-objcopy: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-objcopy: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-objcopy: lib/libLLVMDemangle.a
 bin/llvm-objcopy: tools/llvm-objcopy/CMakeFiles/llvm-objcopy.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable ../../bin/llvm-objcopy"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-objcopy && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-objcopy.dir/link.txt --verbose=$(VERBOSE)

@@ -98,7 +98,6 @@ PrintFunctionNames_EXTERNAL_OBJECTS =
 
 lib/PrintFunctionNames.dylib: tools/clang/examples/PrintFunctionNames/CMakeFiles/PrintFunctionNames.dir/PrintFunctionNames.cpp.o
 lib/PrintFunctionNames.dylib: tools/clang/examples/PrintFunctionNames/CMakeFiles/PrintFunctionNames.dir/build.make
-lib/PrintFunctionNames.dylib: lib/libLLVM.dylib
 lib/PrintFunctionNames.dylib: tools/clang/examples/PrintFunctionNames/CMakeFiles/PrintFunctionNames.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module ../../../../lib/PrintFunctionNames.dylib"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/clang/examples/PrintFunctionNames && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PrintFunctionNames.dir/link.txt --verbose=$(VERBOSE)

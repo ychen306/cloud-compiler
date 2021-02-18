@@ -98,7 +98,10 @@ split__file_EXTERNAL_OBJECTS =
 
 bin/split-file: tools/split-file/CMakeFiles/split-file.dir/split-file.cpp.o
 bin/split-file: tools/split-file/CMakeFiles/split-file.dir/build.make
-bin/split-file: lib/libLLVM.dylib
+bin/split-file: lib/libLLVMSupport.a
+bin/split-file: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/split-file: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/split-file: lib/libLLVMDemangle.a
 bin/split-file: tools/split-file/CMakeFiles/split-file.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/split-file"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/split-file && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/split-file.dir/link.txt --verbose=$(VERBOSE)

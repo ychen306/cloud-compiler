@@ -98,7 +98,22 @@ llvm__size_EXTERNAL_OBJECTS =
 
 bin/llvm-size: tools/llvm-size/CMakeFiles/llvm-size.dir/llvm-size.cpp.o
 bin/llvm-size: tools/llvm-size/CMakeFiles/llvm-size.dir/build.make
-bin/llvm-size: lib/libLLVM.dylib
+bin/llvm-size: lib/libLLVMObject.a
+bin/llvm-size: lib/libLLVMSupport.a
+bin/llvm-size: lib/libLLVMBitReader.a
+bin/llvm-size: lib/libLLVMCore.a
+bin/llvm-size: lib/libLLVMRemarks.a
+bin/llvm-size: lib/libLLVMBitstreamReader.a
+bin/llvm-size: lib/libLLVMMCParser.a
+bin/llvm-size: lib/libLLVMMC.a
+bin/llvm-size: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-size: lib/libLLVMDebugInfoMSF.a
+bin/llvm-size: lib/libLLVMTextAPI.a
+bin/llvm-size: lib/libLLVMBinaryFormat.a
+bin/llvm-size: lib/libLLVMSupport.a
+bin/llvm-size: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-size: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-size: lib/libLLVMDemangle.a
 bin/llvm-size: tools/llvm-size/CMakeFiles/llvm-size.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-size"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-size && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-size.dir/link.txt --verbose=$(VERBOSE)

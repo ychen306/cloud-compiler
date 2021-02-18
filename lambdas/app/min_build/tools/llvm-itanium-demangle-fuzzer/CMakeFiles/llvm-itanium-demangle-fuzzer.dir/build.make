@@ -113,7 +113,32 @@ llvm__itanium__demangle__fuzzer_EXTERNAL_OBJECTS =
 bin/llvm-itanium-demangle-fuzzer: tools/llvm-itanium-demangle-fuzzer/CMakeFiles/llvm-itanium-demangle-fuzzer.dir/DummyDemanglerFuzzer.cpp.o
 bin/llvm-itanium-demangle-fuzzer: tools/llvm-itanium-demangle-fuzzer/CMakeFiles/llvm-itanium-demangle-fuzzer.dir/llvm-itanium-demangle-fuzzer.cpp.o
 bin/llvm-itanium-demangle-fuzzer: tools/llvm-itanium-demangle-fuzzer/CMakeFiles/llvm-itanium-demangle-fuzzer.dir/build.make
-bin/llvm-itanium-demangle-fuzzer: lib/libLLVM.dylib
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMDemangle.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMFuzzMutate.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMSupport.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMBitWriter.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMScalarOpts.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMAggressiveInstCombine.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMInstCombine.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMTransformUtils.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMTarget.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMAnalysis.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMObject.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMBitReader.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMMCParser.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMTextAPI.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMProfileData.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMCore.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMRemarks.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMBitstreamReader.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMMC.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMBinaryFormat.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMDebugInfoMSF.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMSupport.a
+bin/llvm-itanium-demangle-fuzzer: lib/libLLVMDemangle.a
+bin/llvm-itanium-demangle-fuzzer: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-itanium-demangle-fuzzer: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
 bin/llvm-itanium-demangle-fuzzer: tools/llvm-itanium-demangle-fuzzer/CMakeFiles/llvm-itanium-demangle-fuzzer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../bin/llvm-itanium-demangle-fuzzer"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-itanium-demangle-fuzzer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-itanium-demangle-fuzzer.dir/link.txt --verbose=$(VERBOSE)

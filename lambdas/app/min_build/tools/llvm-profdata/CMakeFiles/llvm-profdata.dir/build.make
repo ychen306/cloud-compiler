@@ -98,7 +98,17 @@ llvm__profdata_EXTERNAL_OBJECTS =
 
 bin/llvm-profdata: tools/llvm-profdata/CMakeFiles/llvm-profdata.dir/llvm-profdata.cpp.o
 bin/llvm-profdata: tools/llvm-profdata/CMakeFiles/llvm-profdata.dir/build.make
-bin/llvm-profdata: lib/libLLVM.dylib
+bin/llvm-profdata: lib/libLLVMCore.a
+bin/llvm-profdata: lib/libLLVMProfileData.a
+bin/llvm-profdata: lib/libLLVMSupport.a
+bin/llvm-profdata: lib/libLLVMCore.a
+bin/llvm-profdata: lib/libLLVMBinaryFormat.a
+bin/llvm-profdata: lib/libLLVMRemarks.a
+bin/llvm-profdata: lib/libLLVMBitstreamReader.a
+bin/llvm-profdata: lib/libLLVMSupport.a
+bin/llvm-profdata: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-profdata: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-profdata: lib/libLLVMDemangle.a
 bin/llvm-profdata: tools/llvm-profdata/CMakeFiles/llvm-profdata.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-profdata"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-profdata && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-profdata.dir/link.txt --verbose=$(VERBOSE)

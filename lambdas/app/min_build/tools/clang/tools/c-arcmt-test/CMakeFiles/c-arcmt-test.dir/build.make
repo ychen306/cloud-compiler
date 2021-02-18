@@ -99,7 +99,6 @@ c__arcmt__test_EXTERNAL_OBJECTS =
 bin/c-arcmt-test: tools/clang/tools/c-arcmt-test/CMakeFiles/c-arcmt-test.dir/c-arcmt-test.c.o
 bin/c-arcmt-test: tools/clang/tools/c-arcmt-test/CMakeFiles/c-arcmt-test.dir/build.make
 bin/c-arcmt-test: lib/libclang.dylib
-bin/c-arcmt-test: lib/libLLVM.dylib
 bin/c-arcmt-test: tools/clang/tools/c-arcmt-test/CMakeFiles/c-arcmt-test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../../bin/c-arcmt-test"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/clang/tools/c-arcmt-test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/c-arcmt-test.dir/link.txt --verbose=$(VERBOSE)

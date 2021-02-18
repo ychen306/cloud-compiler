@@ -98,7 +98,31 @@ llvm__ar_EXTERNAL_OBJECTS =
 
 bin/llvm-ar: tools/llvm-ar/CMakeFiles/llvm-ar.dir/llvm-ar.cpp.o
 bin/llvm-ar: tools/llvm-ar/CMakeFiles/llvm-ar.dir/build.make
-bin/llvm-ar: lib/libLLVM.dylib
+bin/llvm-ar: lib/libLLVMX86AsmParser.a
+bin/llvm-ar: lib/libLLVMX86Desc.a
+bin/llvm-ar: lib/libLLVMX86Info.a
+bin/llvm-ar: lib/libLLVMBinaryFormat.a
+bin/llvm-ar: lib/libLLVMCore.a
+bin/llvm-ar: lib/libLLVMDlltoolDriver.a
+bin/llvm-ar: lib/libLLVMLibDriver.a
+bin/llvm-ar: lib/libLLVMObject.a
+bin/llvm-ar: lib/libLLVMSupport.a
+bin/llvm-ar: lib/libLLVMMCDisassembler.a
+bin/llvm-ar: lib/libLLVMMCParser.a
+bin/llvm-ar: lib/libLLVMMC.a
+bin/llvm-ar: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-ar: lib/libLLVMDebugInfoMSF.a
+bin/llvm-ar: lib/libLLVMTextAPI.a
+bin/llvm-ar: lib/libLLVMOption.a
+bin/llvm-ar: lib/libLLVMBitReader.a
+bin/llvm-ar: lib/libLLVMCore.a
+bin/llvm-ar: lib/libLLVMBinaryFormat.a
+bin/llvm-ar: lib/libLLVMRemarks.a
+bin/llvm-ar: lib/libLLVMBitstreamReader.a
+bin/llvm-ar: lib/libLLVMSupport.a
+bin/llvm-ar: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-ar: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-ar: lib/libLLVMDemangle.a
 bin/llvm-ar: tools/llvm-ar/CMakeFiles/llvm-ar.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-ar"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-ar && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-ar.dir/link.txt --verbose=$(VERBOSE)

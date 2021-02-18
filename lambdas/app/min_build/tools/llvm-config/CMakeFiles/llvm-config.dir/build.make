@@ -99,7 +99,10 @@ llvm__config_EXTERNAL_OBJECTS =
 
 bin/llvm-config: tools/llvm-config/CMakeFiles/llvm-config.dir/llvm-config.cpp.o
 bin/llvm-config: tools/llvm-config/CMakeFiles/llvm-config.dir/build.make
-bin/llvm-config: lib/libLLVM.dylib
+bin/llvm-config: lib/libLLVMSupport.a
+bin/llvm-config: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-config: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-config: lib/libLLVMDemangle.a
 bin/llvm-config: tools/llvm-config/CMakeFiles/llvm-config.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-config"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-config && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-config.dir/link.txt --verbose=$(VERBOSE)

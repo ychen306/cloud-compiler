@@ -98,7 +98,6 @@ AnnotateFunctions_EXTERNAL_OBJECTS =
 
 lib/AnnotateFunctions.dylib: tools/clang/examples/AnnotateFunctions/CMakeFiles/AnnotateFunctions.dir/AnnotateFunctions.cpp.o
 lib/AnnotateFunctions.dylib: tools/clang/examples/AnnotateFunctions/CMakeFiles/AnnotateFunctions.dir/build.make
-lib/AnnotateFunctions.dylib: lib/libLLVM.dylib
 lib/AnnotateFunctions.dylib: tools/clang/examples/AnnotateFunctions/CMakeFiles/AnnotateFunctions.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module ../../../../lib/AnnotateFunctions.dylib"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/clang/examples/AnnotateFunctions && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AnnotateFunctions.dir/link.txt --verbose=$(VERBOSE)

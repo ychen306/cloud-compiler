@@ -98,7 +98,6 @@ Attribute_EXTERNAL_OBJECTS =
 
 lib/Attribute.dylib: tools/clang/examples/Attribute/CMakeFiles/Attribute.dir/Attribute.cpp.o
 lib/Attribute.dylib: tools/clang/examples/Attribute/CMakeFiles/Attribute.dir/build.make
-lib/Attribute.dylib: lib/libLLVM.dylib
 lib/Attribute.dylib: tools/clang/examples/Attribute/CMakeFiles/Attribute.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module ../../../../lib/Attribute.dylib"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/clang/examples/Attribute && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Attribute.dir/link.txt --verbose=$(VERBOSE)

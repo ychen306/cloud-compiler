@@ -98,7 +98,25 @@ llvm__opt__report_EXTERNAL_OBJECTS =
 
 bin/llvm-opt-report: tools/llvm-opt-report/CMakeFiles/llvm-opt-report.dir/OptReport.cpp.o
 bin/llvm-opt-report: tools/llvm-opt-report/CMakeFiles/llvm-opt-report.dir/build.make
-bin/llvm-opt-report: lib/libLLVM.dylib
+bin/llvm-opt-report: lib/libLLVMCore.a
+bin/llvm-opt-report: lib/libLLVMDemangle.a
+bin/llvm-opt-report: lib/libLLVMObject.a
+bin/llvm-opt-report: lib/libLLVMRemarks.a
+bin/llvm-opt-report: lib/libLLVMSupport.a
+bin/llvm-opt-report: lib/libLLVMBitReader.a
+bin/llvm-opt-report: lib/libLLVMCore.a
+bin/llvm-opt-report: lib/libLLVMRemarks.a
+bin/llvm-opt-report: lib/libLLVMBitstreamReader.a
+bin/llvm-opt-report: lib/libLLVMMCParser.a
+bin/llvm-opt-report: lib/libLLVMMC.a
+bin/llvm-opt-report: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-opt-report: lib/libLLVMDebugInfoMSF.a
+bin/llvm-opt-report: lib/libLLVMTextAPI.a
+bin/llvm-opt-report: lib/libLLVMBinaryFormat.a
+bin/llvm-opt-report: lib/libLLVMSupport.a
+bin/llvm-opt-report: lib/libLLVMDemangle.a
+bin/llvm-opt-report: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-opt-report: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
 bin/llvm-opt-report: tools/llvm-opt-report/CMakeFiles/llvm-opt-report.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-opt-report"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-opt-report && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-opt-report.dir/link.txt --verbose=$(VERBOSE)

@@ -263,7 +263,26 @@ bin/llvm-cov: tools/llvm-cov/CMakeFiles/llvm-cov.dir/SourceCoverageViewHTML.cpp.
 bin/llvm-cov: tools/llvm-cov/CMakeFiles/llvm-cov.dir/SourceCoverageViewText.cpp.o
 bin/llvm-cov: tools/llvm-cov/CMakeFiles/llvm-cov.dir/TestingSupport.cpp.o
 bin/llvm-cov: tools/llvm-cov/CMakeFiles/llvm-cov.dir/build.make
-bin/llvm-cov: lib/libLLVM.dylib
+bin/llvm-cov: lib/libLLVMCore.a
+bin/llvm-cov: lib/libLLVMSupport.a
+bin/llvm-cov: lib/libLLVMObject.a
+bin/llvm-cov: lib/libLLVMCoverage.a
+bin/llvm-cov: lib/libLLVMProfileData.a
+bin/llvm-cov: lib/libLLVMObject.a
+bin/llvm-cov: lib/libLLVMBitReader.a
+bin/llvm-cov: lib/libLLVMMCParser.a
+bin/llvm-cov: lib/libLLVMMC.a
+bin/llvm-cov: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-cov: lib/libLLVMDebugInfoMSF.a
+bin/llvm-cov: lib/libLLVMTextAPI.a
+bin/llvm-cov: lib/libLLVMCore.a
+bin/llvm-cov: lib/libLLVMBinaryFormat.a
+bin/llvm-cov: lib/libLLVMRemarks.a
+bin/llvm-cov: lib/libLLVMBitstreamReader.a
+bin/llvm-cov: lib/libLLVMSupport.a
+bin/llvm-cov: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-cov: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-cov: lib/libLLVMDemangle.a
 bin/llvm-cov: tools/llvm-cov/CMakeFiles/llvm-cov.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable ../../bin/llvm-cov"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-cov && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-cov.dir/link.txt --verbose=$(VERBOSE)

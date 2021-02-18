@@ -113,7 +113,22 @@ llvm__mc_EXTERNAL_OBJECTS =
 bin/llvm-mc: tools/llvm-mc/CMakeFiles/llvm-mc.dir/llvm-mc.cpp.o
 bin/llvm-mc: tools/llvm-mc/CMakeFiles/llvm-mc.dir/Disassembler.cpp.o
 bin/llvm-mc: tools/llvm-mc/CMakeFiles/llvm-mc.dir/build.make
-bin/llvm-mc: lib/libLLVM.dylib
+bin/llvm-mc: lib/libLLVMX86AsmParser.a
+bin/llvm-mc: lib/libLLVMX86Desc.a
+bin/llvm-mc: lib/libLLVMX86Disassembler.a
+bin/llvm-mc: lib/libLLVMX86Info.a
+bin/llvm-mc: lib/libLLVMMC.a
+bin/llvm-mc: lib/libLLVMMCParser.a
+bin/llvm-mc: lib/libLLVMSupport.a
+bin/llvm-mc: lib/libLLVMMCDisassembler.a
+bin/llvm-mc: lib/libLLVMMC.a
+bin/llvm-mc: lib/libLLVMBinaryFormat.a
+bin/llvm-mc: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-mc: lib/libLLVMDebugInfoMSF.a
+bin/llvm-mc: lib/libLLVMSupport.a
+bin/llvm-mc: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-mc: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-mc: lib/libLLVMDemangle.a
 bin/llvm-mc: tools/llvm-mc/CMakeFiles/llvm-mc.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../bin/llvm-mc"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-mc && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-mc.dir/link.txt --verbose=$(VERBOSE)

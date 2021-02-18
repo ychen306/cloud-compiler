@@ -293,7 +293,23 @@ bin/llvm-mca: tools/llvm-mca/CMakeFiles/llvm-mca.dir/Views/SummaryView.cpp.o
 bin/llvm-mca: tools/llvm-mca/CMakeFiles/llvm-mca.dir/Views/TimelineView.cpp.o
 bin/llvm-mca: tools/llvm-mca/CMakeFiles/llvm-mca.dir/Views/View.cpp.o
 bin/llvm-mca: tools/llvm-mca/CMakeFiles/llvm-mca.dir/build.make
-bin/llvm-mca: lib/libLLVM.dylib
+bin/llvm-mca: lib/libLLVMX86AsmParser.a
+bin/llvm-mca: lib/libLLVMX86Desc.a
+bin/llvm-mca: lib/libLLVMX86Disassembler.a
+bin/llvm-mca: lib/libLLVMX86Info.a
+bin/llvm-mca: lib/libLLVMMCA.a
+bin/llvm-mca: lib/libLLVMMC.a
+bin/llvm-mca: lib/libLLVMMCParser.a
+bin/llvm-mca: lib/libLLVMSupport.a
+bin/llvm-mca: lib/libLLVMMCDisassembler.a
+bin/llvm-mca: lib/libLLVMMC.a
+bin/llvm-mca: lib/libLLVMBinaryFormat.a
+bin/llvm-mca: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-mca: lib/libLLVMDebugInfoMSF.a
+bin/llvm-mca: lib/libLLVMSupport.a
+bin/llvm-mca: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-mca: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-mca: lib/libLLVMDemangle.a
 bin/llvm-mca: tools/llvm-mca/CMakeFiles/llvm-mca.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable ../../bin/llvm-mca"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-mca && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-mca.dir/link.txt --verbose=$(VERBOSE)

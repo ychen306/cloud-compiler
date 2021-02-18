@@ -98,7 +98,38 @@ llvm__extract_EXTERNAL_OBJECTS =
 
 bin/llvm-extract: tools/llvm-extract/CMakeFiles/llvm-extract.dir/llvm-extract.cpp.o
 bin/llvm-extract: tools/llvm-extract/CMakeFiles/llvm-extract.dir/build.make
-bin/llvm-extract: lib/libLLVM.dylib
+bin/llvm-extract: lib/libLLVMBitWriter.a
+bin/llvm-extract: lib/libLLVMCore.a
+bin/llvm-extract: lib/libLLVMipo.a
+bin/llvm-extract: lib/libLLVMIRReader.a
+bin/llvm-extract: lib/libLLVMSupport.a
+bin/llvm-extract: lib/libLLVMBitWriter.a
+bin/llvm-extract: lib/libLLVMAsmParser.a
+bin/llvm-extract: lib/libLLVMFrontendOpenMP.a
+bin/llvm-extract: lib/libLLVMLinker.a
+bin/llvm-extract: lib/libLLVMScalarOpts.a
+bin/llvm-extract: lib/libLLVMAggressiveInstCombine.a
+bin/llvm-extract: lib/libLLVMInstCombine.a
+bin/llvm-extract: lib/libLLVMVectorize.a
+bin/llvm-extract: lib/libLLVMInstrumentation.a
+bin/llvm-extract: lib/libLLVMTransformUtils.a
+bin/llvm-extract: lib/libLLVMAnalysis.a
+bin/llvm-extract: lib/libLLVMObject.a
+bin/llvm-extract: lib/libLLVMBitReader.a
+bin/llvm-extract: lib/libLLVMMCParser.a
+bin/llvm-extract: lib/libLLVMMC.a
+bin/llvm-extract: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-extract: lib/libLLVMDebugInfoMSF.a
+bin/llvm-extract: lib/libLLVMTextAPI.a
+bin/llvm-extract: lib/libLLVMProfileData.a
+bin/llvm-extract: lib/libLLVMCore.a
+bin/llvm-extract: lib/libLLVMBinaryFormat.a
+bin/llvm-extract: lib/libLLVMRemarks.a
+bin/llvm-extract: lib/libLLVMBitstreamReader.a
+bin/llvm-extract: lib/libLLVMSupport.a
+bin/llvm-extract: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-extract: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-extract: lib/libLLVMDemangle.a
 bin/llvm-extract: tools/llvm-extract/CMakeFiles/llvm-extract.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-extract"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-extract && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-extract.dir/link.txt --verbose=$(VERBOSE)

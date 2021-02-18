@@ -98,7 +98,15 @@ llvm__cxxmap_EXTERNAL_OBJECTS =
 
 bin/llvm-cxxmap: tools/llvm-cxxmap/CMakeFiles/llvm-cxxmap.dir/llvm-cxxmap.cpp.o
 bin/llvm-cxxmap: tools/llvm-cxxmap/CMakeFiles/llvm-cxxmap.dir/build.make
-bin/llvm-cxxmap: lib/libLLVM.dylib
+bin/llvm-cxxmap: lib/libLLVMCore.a
+bin/llvm-cxxmap: lib/libLLVMSupport.a
+bin/llvm-cxxmap: lib/libLLVMBinaryFormat.a
+bin/llvm-cxxmap: lib/libLLVMRemarks.a
+bin/llvm-cxxmap: lib/libLLVMBitstreamReader.a
+bin/llvm-cxxmap: lib/libLLVMSupport.a
+bin/llvm-cxxmap: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-cxxmap: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-cxxmap: lib/libLLVMDemangle.a
 bin/llvm-cxxmap: tools/llvm-cxxmap/CMakeFiles/llvm-cxxmap.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-cxxmap"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-cxxmap && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-cxxmap.dir/link.txt --verbose=$(VERBOSE)

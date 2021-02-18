@@ -98,7 +98,25 @@ llvm__ifs_EXTERNAL_OBJECTS =
 
 bin/llvm-ifs: tools/llvm-ifs/CMakeFiles/llvm-ifs.dir/llvm-ifs.cpp.o
 bin/llvm-ifs: tools/llvm-ifs/CMakeFiles/llvm-ifs.dir/build.make
-bin/llvm-ifs: lib/libLLVM.dylib
+bin/llvm-ifs: lib/libLLVMObject.a
+bin/llvm-ifs: lib/libLLVMSupport.a
+bin/llvm-ifs: lib/libLLVMTextAPI.a
+bin/llvm-ifs: lib/libLLVMObjectYAML.a
+bin/llvm-ifs: lib/libLLVMObject.a
+bin/llvm-ifs: lib/libLLVMTextAPI.a
+bin/llvm-ifs: lib/libLLVMBitReader.a
+bin/llvm-ifs: lib/libLLVMCore.a
+bin/llvm-ifs: lib/libLLVMRemarks.a
+bin/llvm-ifs: lib/libLLVMBitstreamReader.a
+bin/llvm-ifs: lib/libLLVMMCParser.a
+bin/llvm-ifs: lib/libLLVMMC.a
+bin/llvm-ifs: lib/libLLVMBinaryFormat.a
+bin/llvm-ifs: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-ifs: lib/libLLVMDebugInfoMSF.a
+bin/llvm-ifs: lib/libLLVMSupport.a
+bin/llvm-ifs: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-ifs: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-ifs: lib/libLLVMDemangle.a
 bin/llvm-ifs: tools/llvm-ifs/CMakeFiles/llvm-ifs.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-ifs"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-ifs && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-ifs.dir/link.txt --verbose=$(VERBOSE)

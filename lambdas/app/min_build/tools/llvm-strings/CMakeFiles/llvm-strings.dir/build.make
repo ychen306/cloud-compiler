@@ -98,7 +98,23 @@ llvm__strings_EXTERNAL_OBJECTS =
 
 bin/llvm-strings: tools/llvm-strings/CMakeFiles/llvm-strings.dir/llvm-strings.cpp.o
 bin/llvm-strings: tools/llvm-strings/CMakeFiles/llvm-strings.dir/build.make
-bin/llvm-strings: lib/libLLVM.dylib
+bin/llvm-strings: lib/libLLVMCore.a
+bin/llvm-strings: lib/libLLVMObject.a
+bin/llvm-strings: lib/libLLVMSupport.a
+bin/llvm-strings: lib/libLLVMBitReader.a
+bin/llvm-strings: lib/libLLVMCore.a
+bin/llvm-strings: lib/libLLVMRemarks.a
+bin/llvm-strings: lib/libLLVMBitstreamReader.a
+bin/llvm-strings: lib/libLLVMMCParser.a
+bin/llvm-strings: lib/libLLVMMC.a
+bin/llvm-strings: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-strings: lib/libLLVMDebugInfoMSF.a
+bin/llvm-strings: lib/libLLVMTextAPI.a
+bin/llvm-strings: lib/libLLVMBinaryFormat.a
+bin/llvm-strings: lib/libLLVMSupport.a
+bin/llvm-strings: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-strings: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-strings: lib/libLLVMDemangle.a
 bin/llvm-strings: tools/llvm-strings/CMakeFiles/llvm-strings.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-strings"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-strings && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-strings.dir/link.txt --verbose=$(VERBOSE)

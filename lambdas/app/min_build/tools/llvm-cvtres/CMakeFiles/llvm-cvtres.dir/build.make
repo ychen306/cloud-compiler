@@ -98,7 +98,23 @@ llvm__cvtres_EXTERNAL_OBJECTS =
 
 bin/llvm-cvtres: tools/llvm-cvtres/CMakeFiles/llvm-cvtres.dir/llvm-cvtres.cpp.o
 bin/llvm-cvtres: tools/llvm-cvtres/CMakeFiles/llvm-cvtres.dir/build.make
-bin/llvm-cvtres: lib/libLLVM.dylib
+bin/llvm-cvtres: lib/libLLVMObject.a
+bin/llvm-cvtres: lib/libLLVMOption.a
+bin/llvm-cvtres: lib/libLLVMSupport.a
+bin/llvm-cvtres: lib/libLLVMBitReader.a
+bin/llvm-cvtres: lib/libLLVMCore.a
+bin/llvm-cvtres: lib/libLLVMRemarks.a
+bin/llvm-cvtres: lib/libLLVMBitstreamReader.a
+bin/llvm-cvtres: lib/libLLVMMCParser.a
+bin/llvm-cvtres: lib/libLLVMMC.a
+bin/llvm-cvtres: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-cvtres: lib/libLLVMDebugInfoMSF.a
+bin/llvm-cvtres: lib/libLLVMTextAPI.a
+bin/llvm-cvtres: lib/libLLVMBinaryFormat.a
+bin/llvm-cvtres: lib/libLLVMSupport.a
+bin/llvm-cvtres: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-cvtres: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-cvtres: lib/libLLVMDemangle.a
 bin/llvm-cvtres: tools/llvm-cvtres/CMakeFiles/llvm-cvtres.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/llvm-cvtres"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-cvtres && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-cvtres.dir/link.txt --verbose=$(VERBOSE)

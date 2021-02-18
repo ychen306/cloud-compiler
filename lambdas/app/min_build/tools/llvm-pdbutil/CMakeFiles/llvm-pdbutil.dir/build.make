@@ -428,7 +428,28 @@ bin/llvm-pdbutil: tools/llvm-pdbutil/CMakeFiles/llvm-pdbutil.dir/StreamUtil.cpp.
 bin/llvm-pdbutil: tools/llvm-pdbutil/CMakeFiles/llvm-pdbutil.dir/TypeReferenceTracker.cpp.o
 bin/llvm-pdbutil: tools/llvm-pdbutil/CMakeFiles/llvm-pdbutil.dir/YAMLOutputStyle.cpp.o
 bin/llvm-pdbutil: tools/llvm-pdbutil/CMakeFiles/llvm-pdbutil.dir/build.make
-bin/llvm-pdbutil: lib/libLLVM.dylib
+bin/llvm-pdbutil: lib/libLLVMBinaryFormat.a
+bin/llvm-pdbutil: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-pdbutil: lib/libLLVMDebugInfoMSF.a
+bin/llvm-pdbutil: lib/libLLVMDebugInfoPDB.a
+bin/llvm-pdbutil: lib/libLLVMObject.a
+bin/llvm-pdbutil: lib/libLLVMObjectYAML.a
+bin/llvm-pdbutil: lib/libLLVMSupport.a
+bin/llvm-pdbutil: lib/libLLVMObject.a
+bin/llvm-pdbutil: lib/libLLVMBitReader.a
+bin/llvm-pdbutil: lib/libLLVMCore.a
+bin/llvm-pdbutil: lib/libLLVMRemarks.a
+bin/llvm-pdbutil: lib/libLLVMBitstreamReader.a
+bin/llvm-pdbutil: lib/libLLVMMCParser.a
+bin/llvm-pdbutil: lib/libLLVMTextAPI.a
+bin/llvm-pdbutil: lib/libLLVMMC.a
+bin/llvm-pdbutil: lib/libLLVMBinaryFormat.a
+bin/llvm-pdbutil: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-pdbutil: lib/libLLVMDebugInfoMSF.a
+bin/llvm-pdbutil: lib/libLLVMSupport.a
+bin/llvm-pdbutil: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-pdbutil: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-pdbutil: lib/libLLVMDemangle.a
 bin/llvm-pdbutil: tools/llvm-pdbutil/CMakeFiles/llvm-pdbutil.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable ../../bin/llvm-pdbutil"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-pdbutil && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-pdbutil.dir/link.txt --verbose=$(VERBOSE)

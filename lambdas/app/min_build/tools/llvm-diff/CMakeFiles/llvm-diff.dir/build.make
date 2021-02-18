@@ -143,7 +143,19 @@ bin/llvm-diff: tools/llvm-diff/CMakeFiles/llvm-diff.dir/DiffConsumer.cpp.o
 bin/llvm-diff: tools/llvm-diff/CMakeFiles/llvm-diff.dir/DiffLog.cpp.o
 bin/llvm-diff: tools/llvm-diff/CMakeFiles/llvm-diff.dir/DifferenceEngine.cpp.o
 bin/llvm-diff: tools/llvm-diff/CMakeFiles/llvm-diff.dir/build.make
-bin/llvm-diff: lib/libLLVM.dylib
+bin/llvm-diff: lib/libLLVMCore.a
+bin/llvm-diff: lib/libLLVMIRReader.a
+bin/llvm-diff: lib/libLLVMSupport.a
+bin/llvm-diff: lib/libLLVMAsmParser.a
+bin/llvm-diff: lib/libLLVMBitReader.a
+bin/llvm-diff: lib/libLLVMCore.a
+bin/llvm-diff: lib/libLLVMBinaryFormat.a
+bin/llvm-diff: lib/libLLVMRemarks.a
+bin/llvm-diff: lib/libLLVMBitstreamReader.a
+bin/llvm-diff: lib/libLLVMSupport.a
+bin/llvm-diff: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-diff: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-diff: lib/libLLVMDemangle.a
 bin/llvm-diff: tools/llvm-diff/CMakeFiles/llvm-diff.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../../bin/llvm-diff"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-diff && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-diff.dir/link.txt --verbose=$(VERBOSE)

@@ -98,7 +98,6 @@ LLVMHello_EXTERNAL_OBJECTS =
 
 lib/LLVMHello.dylib: lib/Transforms/Hello/CMakeFiles/LLVMHello.dir/Hello.cpp.o
 lib/LLVMHello.dylib: lib/Transforms/Hello/CMakeFiles/LLVMHello.dir/build.make
-lib/LLVMHello.dylib: lib/libLLVM.dylib
 lib/LLVMHello.dylib: lib/Transforms/Hello/CMakeFiles/LLVMHello.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module ../../LLVMHello.dylib"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/lib/Transforms/Hello && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LLVMHello.dir/link.txt --verbose=$(VERBOSE)

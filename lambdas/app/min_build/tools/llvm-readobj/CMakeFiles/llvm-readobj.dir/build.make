@@ -248,7 +248,30 @@ bin/llvm-readobj: tools/llvm-readobj/CMakeFiles/llvm-readobj.dir/Win64EHDumper.c
 bin/llvm-readobj: tools/llvm-readobj/CMakeFiles/llvm-readobj.dir/WindowsResourceDumper.cpp.o
 bin/llvm-readobj: tools/llvm-readobj/CMakeFiles/llvm-readobj.dir/XCOFFDumper.cpp.o
 bin/llvm-readobj: tools/llvm-readobj/CMakeFiles/llvm-readobj.dir/build.make
-bin/llvm-readobj: lib/libLLVM.dylib
+bin/llvm-readobj: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-readobj: lib/libLLVMDebugInfoDWARF.a
+bin/llvm-readobj: lib/libLLVMDemangle.a
+bin/llvm-readobj: lib/libLLVMObject.a
+bin/llvm-readobj: lib/libLLVMBinaryFormat.a
+bin/llvm-readobj: lib/libLLVMSupport.a
+bin/llvm-readobj: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-readobj: lib/libLLVMDebugInfoMSF.a
+bin/llvm-readobj: lib/libLLVMDebugInfoPDB.a
+bin/llvm-readobj: lib/libLLVMObject.a
+bin/llvm-readobj: lib/libLLVMBitReader.a
+bin/llvm-readobj: lib/libLLVMCore.a
+bin/llvm-readobj: lib/libLLVMRemarks.a
+bin/llvm-readobj: lib/libLLVMBitstreamReader.a
+bin/llvm-readobj: lib/libLLVMMCParser.a
+bin/llvm-readobj: lib/libLLVMMC.a
+bin/llvm-readobj: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-readobj: lib/libLLVMTextAPI.a
+bin/llvm-readobj: lib/libLLVMBinaryFormat.a
+bin/llvm-readobj: lib/libLLVMDebugInfoMSF.a
+bin/llvm-readobj: lib/libLLVMSupport.a
+bin/llvm-readobj: lib/libLLVMDemangle.a
+bin/llvm-readobj: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-readobj: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
 bin/llvm-readobj: tools/llvm-readobj/CMakeFiles/llvm-readobj.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable ../../bin/llvm-readobj"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-readobj && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-readobj.dir/link.txt --verbose=$(VERBOSE)

@@ -143,7 +143,33 @@ bin/llvm-profgen: tools/llvm-profgen/CMakeFiles/llvm-profgen.dir/PerfReader.cpp.
 bin/llvm-profgen: tools/llvm-profgen/CMakeFiles/llvm-profgen.dir/ProfiledBinary.cpp.o
 bin/llvm-profgen: tools/llvm-profgen/CMakeFiles/llvm-profgen.dir/ProfileGenerator.cpp.o
 bin/llvm-profgen: tools/llvm-profgen/CMakeFiles/llvm-profgen.dir/build.make
-bin/llvm-profgen: lib/libLLVM.dylib
+bin/llvm-profgen: lib/libLLVMX86Desc.a
+bin/llvm-profgen: lib/libLLVMX86Disassembler.a
+bin/llvm-profgen: lib/libLLVMX86Info.a
+bin/llvm-profgen: lib/libLLVMCore.a
+bin/llvm-profgen: lib/libLLVMMC.a
+bin/llvm-profgen: lib/libLLVMMCDisassembler.a
+bin/llvm-profgen: lib/libLLVMObject.a
+bin/llvm-profgen: lib/libLLVMProfileData.a
+bin/llvm-profgen: lib/libLLVMSupport.a
+bin/llvm-profgen: lib/libLLVMSymbolize.a
+bin/llvm-profgen: lib/libLLVMDebugInfoDWARF.a
+bin/llvm-profgen: lib/libLLVMDebugInfoPDB.a
+bin/llvm-profgen: lib/libLLVMObject.a
+bin/llvm-profgen: lib/libLLVMBitReader.a
+bin/llvm-profgen: lib/libLLVMCore.a
+bin/llvm-profgen: lib/libLLVMRemarks.a
+bin/llvm-profgen: lib/libLLVMBitstreamReader.a
+bin/llvm-profgen: lib/libLLVMMCParser.a
+bin/llvm-profgen: lib/libLLVMMC.a
+bin/llvm-profgen: lib/libLLVMTextAPI.a
+bin/llvm-profgen: lib/libLLVMBinaryFormat.a
+bin/llvm-profgen: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-profgen: lib/libLLVMDebugInfoMSF.a
+bin/llvm-profgen: lib/libLLVMSupport.a
+bin/llvm-profgen: lib/libLLVMDemangle.a
+bin/llvm-profgen: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-profgen: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
 bin/llvm-profgen: tools/llvm-profgen/CMakeFiles/llvm-profgen.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../../bin/llvm-profgen"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-profgen && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-profgen.dir/link.txt --verbose=$(VERBOSE)

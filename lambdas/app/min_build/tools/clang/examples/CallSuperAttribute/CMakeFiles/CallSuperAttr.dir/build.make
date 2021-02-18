@@ -98,7 +98,6 @@ CallSuperAttr_EXTERNAL_OBJECTS =
 
 lib/CallSuperAttr.dylib: tools/clang/examples/CallSuperAttribute/CMakeFiles/CallSuperAttr.dir/CallSuperAttrInfo.cpp.o
 lib/CallSuperAttr.dylib: tools/clang/examples/CallSuperAttribute/CMakeFiles/CallSuperAttr.dir/build.make
-lib/CallSuperAttr.dylib: lib/libLLVM.dylib
 lib/CallSuperAttr.dylib: tools/clang/examples/CallSuperAttribute/CMakeFiles/CallSuperAttr.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module ../../../../lib/CallSuperAttr.dylib"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/clang/examples/CallSuperAttribute && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CallSuperAttr.dir/link.txt --verbose=$(VERBOSE)

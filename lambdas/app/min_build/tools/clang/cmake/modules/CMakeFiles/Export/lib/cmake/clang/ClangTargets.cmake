@@ -54,245 +54,245 @@ endif()
 add_library(clangBasic STATIC IMPORTED)
 
 set_target_properties(clangBasic PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVM"
+  INTERFACE_LINK_LIBRARIES "LLVMCore;LLVMMC;LLVMSupport"
 )
 
 # Create imported target clangAPINotes
 add_library(clangAPINotes STATIC IMPORTED)
 
 set_target_properties(clangAPINotes PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangBasic;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangBasic;LLVMSupport"
 )
 
 # Create imported target clangLex
 add_library(clangLex STATIC IMPORTED)
 
 set_target_properties(clangLex PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangBasic;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangBasic;LLVMSupport"
 )
 
 # Create imported target clangParse
 add_library(clangParse STATIC IMPORTED)
 
 set_target_properties(clangParse PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangLex;clangSema;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangLex;clangSema;LLVMFrontendOpenMP;LLVMMC;LLVMMCParser;LLVMSupport"
 )
 
 # Create imported target clangAST
 add_library(clangAST STATIC IMPORTED)
 
 set_target_properties(clangAST PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangBasic;clangLex;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangBasic;clangLex;LLVMBinaryFormat;LLVMCore;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangDynamicASTMatchers
 add_library(clangDynamicASTMatchers STATIC IMPORTED)
 
 set_target_properties(clangDynamicASTMatchers PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangASTMatchers
 add_library(clangASTMatchers STATIC IMPORTED)
 
 set_target_properties(clangASTMatchers PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangLex;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangLex;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangCrossTU
 add_library(clangCrossTU STATIC IMPORTED)
 
 set_target_properties(clangCrossTU PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangFrontend;clangIndex;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangFrontend;clangIndex;LLVMSupport"
 )
 
 # Create imported target clangSema
 add_library(clangSema STATIC IMPORTED)
 
 set_target_properties(clangSema PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangAnalysis;clangBasic;clangEdit;clangLex;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangAnalysis;clangBasic;clangEdit;clangLex;LLVMCore;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangCodeGen
 add_library(clangCodeGen STATIC IMPORTED)
 
 set_target_properties(clangCodeGen PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAnalysis;clangAST;clangBasic;clangFrontend;clangLex;clangSerialization;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAnalysis;clangAST;clangBasic;clangFrontend;clangLex;clangSerialization;LLVMAnalysis;LLVMBitReader;LLVMBitWriter;LLVMCore;LLVMCoroutines;LLVMCoverage;LLVMExtensions;LLVMFrontendOpenMP;LLVMipo;LLVMIRReader;LLVMAggressiveInstCombine;LLVMInstCombine;LLVMInstrumentation;LLVMLTO;LLVMLinker;LLVMMC;LLVMObjCARCOpts;LLVMObject;LLVMPasses;LLVMProfileData;LLVMRemarks;LLVMScalarOpts;LLVMSupport;LLVMTarget;LLVMTransformUtils"
 )
 
 # Create imported target clangAnalysis
 add_library(clangAnalysis STATIC IMPORTED)
 
 set_target_properties(clangAnalysis PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangLex;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangLex;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangEdit
 add_library(clangEdit STATIC IMPORTED)
 
 set_target_properties(clangEdit PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangLex;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangLex;LLVMSupport"
 )
 
 # Create imported target clangRewrite
 add_library(clangRewrite STATIC IMPORTED)
 
 set_target_properties(clangRewrite PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangBasic;clangLex;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangBasic;clangLex;LLVMSupport"
 )
 
 # Create imported target clangARCMigrate
 add_library(clangARCMigrate STATIC IMPORTED)
 
 set_target_properties(clangARCMigrate PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangAnalysis;clangBasic;clangEdit;clangFrontend;clangLex;clangRewrite;clangSema;clangSerialization;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangAnalysis;clangBasic;clangEdit;clangFrontend;clangLex;clangRewrite;clangSema;clangSerialization;LLVMSupport"
 )
 
 # Create imported target clangDriver
 add_library(clangDriver STATIC IMPORTED)
 
 set_target_properties(clangDriver PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangBasic;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangBasic;LLVMBinaryFormat;LLVMOption;LLVMProfileData;LLVMSupport"
 )
 
 # Create imported target clangSerialization
 add_library(clangSerialization STATIC IMPORTED)
 
 set_target_properties(clangSerialization PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangLex;clangSema;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangLex;clangSema;LLVMBitReader;LLVMBitstreamReader;LLVMSupport"
 )
 
 # Create imported target clangRewriteFrontend
 add_library(clangRewriteFrontend STATIC IMPORTED)
 
 set_target_properties(clangRewriteFrontend PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangEdit;clangFrontend;clangLex;clangRewrite;clangSerialization;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangEdit;clangFrontend;clangLex;clangRewrite;clangSerialization;LLVMSupport"
 )
 
 # Create imported target clangFrontend
 add_library(clangFrontend STATIC IMPORTED)
 
 set_target_properties(clangFrontend PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangDriver;clangEdit;clangLex;clangParse;clangSema;clangSerialization;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangDriver;clangEdit;clangLex;clangParse;clangSema;clangSerialization;LLVMBitReader;LLVMBitstreamReader;LLVMOption;LLVMProfileData;LLVMSupport"
 )
 
 # Create imported target clangFrontendTool
 add_library(clangFrontendTool STATIC IMPORTED)
 
 set_target_properties(clangFrontendTool PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangBasic;clangCodeGen;clangDriver;clangFrontend;clangRewriteFrontend;clangARCMigrate;clangStaticAnalyzerFrontend;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangBasic;clangCodeGen;clangDriver;clangFrontend;clangRewriteFrontend;clangARCMigrate;clangStaticAnalyzerFrontend;LLVMOption;LLVMSupport"
 )
 
 # Create imported target clangToolingCore
 add_library(clangToolingCore STATIC IMPORTED)
 
 set_target_properties(clangToolingCore PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangBasic;clangLex;clangRewrite;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangBasic;clangLex;clangRewrite;LLVMSupport"
 )
 
 # Create imported target clangToolingInclusions
 add_library(clangToolingInclusions STATIC IMPORTED)
 
 set_target_properties(clangToolingInclusions PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangBasic;clangLex;clangRewrite;clangToolingCore;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangBasic;clangLex;clangRewrite;clangToolingCore;LLVMSupport"
 )
 
 # Create imported target clangToolingRefactoring
 add_library(clangToolingRefactoring STATIC IMPORTED)
 
 set_target_properties(clangToolingRefactoring PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangFormat;clangIndex;clangLex;clangRewrite;clangToolingCore;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangFormat;clangIndex;clangLex;clangRewrite;clangToolingCore;LLVMSupport"
 )
 
 # Create imported target clangToolingASTDiff
 add_library(clangToolingASTDiff STATIC IMPORTED)
 
 set_target_properties(clangToolingASTDiff PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangBasic;clangAST;clangLex;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangBasic;clangAST;clangLex;LLVMSupport"
 )
 
 # Create imported target clangToolingSyntax
 add_library(clangToolingSyntax STATIC IMPORTED)
 
 set_target_properties(clangToolingSyntax PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangFrontend;clangLex;clangToolingCore;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangFrontend;clangLex;clangToolingCore;LLVMSupport"
 )
 
 # Create imported target clangDependencyScanning
 add_library(clangDependencyScanning STATIC IMPORTED)
 
 set_target_properties(clangDependencyScanning PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangDriver;clangFrontend;clangFrontendTool;clangLex;clangParse;clangSerialization;clangTooling;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangDriver;clangFrontend;clangFrontendTool;clangLex;clangParse;clangSerialization;clangTooling;LLVMCore;LLVMSupport"
 )
 
 # Create imported target clangTransformer
 add_library(clangTransformer STATIC IMPORTED)
 
 set_target_properties(clangTransformer PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangLex;clangToolingCore;clangToolingRefactoring;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangLex;clangToolingCore;clangToolingRefactoring;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangTooling
 add_library(clangTooling STATIC IMPORTED)
 
 set_target_properties(clangTooling PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangDriver;clangFormat;clangFrontend;clangLex;clangRewrite;clangSerialization;clangToolingCore;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangBasic;clangDriver;clangFormat;clangFrontend;clangLex;clangRewrite;clangSerialization;clangToolingCore;LLVMOption;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangDirectoryWatcher
 add_library(clangDirectoryWatcher STATIC IMPORTED)
 
 set_target_properties(clangDirectoryWatcher PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVM;-framework CoreServices"
+  INTERFACE_LINK_LIBRARIES "LLVMSupport;-framework CoreServices"
 )
 
 # Create imported target clangIndex
 add_library(clangIndex STATIC IMPORTED)
 
 set_target_properties(clangIndex PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangFormat;clangFrontend;clangLex;clangRewrite;clangSerialization;clangToolingCore;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangBasic;clangFormat;clangFrontend;clangLex;clangRewrite;clangSerialization;clangToolingCore;LLVMCore;LLVMSupport"
 )
 
 # Create imported target clangIndexSerialization
 add_library(clangIndexSerialization STATIC IMPORTED)
 
 set_target_properties(clangIndexSerialization PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangBasic;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangBasic;LLVMSupport"
 )
 
 # Create imported target clangStaticAnalyzerCore
 add_library(clangStaticAnalyzerCore STATIC IMPORTED)
 
 set_target_properties(clangStaticAnalyzerCore PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangAnalysis;clangBasic;clangCrossTU;clangFrontend;clangLex;clangRewrite;clangToolingCore;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangAnalysis;clangBasic;clangCrossTU;clangFrontend;clangLex;clangRewrite;clangToolingCore;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangStaticAnalyzerCheckers
 add_library(clangStaticAnalyzerCheckers STATIC IMPORTED)
 
 set_target_properties(clangStaticAnalyzerCheckers PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangAnalysis;clangBasic;clangLex;clangStaticAnalyzerCore;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangAnalysis;clangBasic;clangLex;clangStaticAnalyzerCore;LLVMFrontendOpenMP;LLVMSupport"
 )
 
 # Create imported target clangStaticAnalyzerFrontend
 add_library(clangStaticAnalyzerFrontend STATIC IMPORTED)
 
 set_target_properties(clangStaticAnalyzerFrontend PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangAnalysis;clangBasic;clangCrossTU;clangFrontend;clangLex;clangStaticAnalyzerCheckers;clangStaticAnalyzerCore;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangAST;clangASTMatchers;clangAnalysis;clangBasic;clangCrossTU;clangFrontend;clangLex;clangStaticAnalyzerCheckers;clangStaticAnalyzerCore;LLVMSupport"
 )
 
 # Create imported target clangFormat
 add_library(clangFormat STATIC IMPORTED)
 
 set_target_properties(clangFormat PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangBasic;clangLex;clangToolingCore;clangToolingInclusions;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangBasic;clangLex;clangToolingCore;clangToolingInclusions;LLVMSupport"
 )
 
 # Create imported target clangTesting
 add_library(clangTesting STATIC IMPORTED)
 
 set_target_properties(clangTesting PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVM"
+  INTERFACE_LINK_LIBRARIES "LLVMSupport"
 )
 
 # Create imported target diagtool
@@ -309,14 +309,14 @@ add_executable(clang-format IMPORTED)
 add_library(clangHandleCXX STATIC IMPORTED)
 
 set_target_properties(clangHandleCXX PROPERTIES
-  INTERFACE_LINK_LIBRARIES "clangBasic;clangCodeGen;clangFrontend;clangLex;clangSerialization;clangTooling;LLVM"
+  INTERFACE_LINK_LIBRARIES "clangBasic;clangCodeGen;clangFrontend;clangLex;clangSerialization;clangTooling;LLVMX86CodeGen;LLVMX86AsmParser;LLVMX86Desc;LLVMX86Disassembler;LLVMX86Info;LLVMSupport"
 )
 
 # Create imported target clangHandleLLVM
 add_library(clangHandleLLVM STATIC IMPORTED)
 
 set_target_properties(clangHandleLLVM PROPERTIES
-  INTERFACE_LINK_LIBRARIES "LLVM"
+  INTERFACE_LINK_LIBRARIES "LLVMAnalysis;LLVMCodeGen;LLVMCore;LLVMExecutionEngine;LLVMipo;LLVMIRReader;LLVMMC;LLVMMCJIT;LLVMObject;LLVMRuntimeDyld;LLVMSelectionDAG;LLVMSupport;LLVMTarget;LLVMTransformUtils;LLVMX86CodeGen;LLVMX86AsmParser;LLVMX86Desc;LLVMX86Disassembler;LLVMX86Info"
 )
 
 # Create imported target clang-offload-bundler
@@ -382,7 +382,7 @@ unset(_IMPORT_CHECK_TARGETS)
 # Make sure the targets which have been exported in some other
 # export set exist.
 unset(${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets)
-foreach(_target "LLVM" )
+foreach(_target "LLVMCore" "LLVMMC" "LLVMSupport" "LLVMFrontendOpenMP" "LLVMMCParser" "LLVMBinaryFormat" "LLVMAnalysis" "LLVMBitReader" "LLVMBitWriter" "LLVMCoroutines" "LLVMCoverage" "LLVMExtensions" "LLVMipo" "LLVMIRReader" "LLVMAggressiveInstCombine" "LLVMInstCombine" "LLVMInstrumentation" "LLVMLTO" "LLVMLinker" "LLVMObjCARCOpts" "LLVMObject" "LLVMPasses" "LLVMProfileData" "LLVMRemarks" "LLVMScalarOpts" "LLVMTarget" "LLVMTransformUtils" "LLVMOption" "LLVMBitstreamReader" "LLVMX86CodeGen" "LLVMX86AsmParser" "LLVMX86Desc" "LLVMX86Disassembler" "LLVMX86Info" "LLVMCodeGen" "LLVMExecutionEngine" "LLVMMCJIT" "LLVMRuntimeDyld" "LLVMSelectionDAG" )
   if(NOT TARGET "${_target}" )
     set(${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets "${${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE_targets} ${_target}")
   endif()

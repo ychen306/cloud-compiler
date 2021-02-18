@@ -113,7 +113,31 @@ llvm__yaml__numeric__parser__fuzzer_EXTERNAL_OBJECTS =
 bin/llvm-yaml-numeric-parser-fuzzer: tools/llvm-yaml-numeric-parser-fuzzer/CMakeFiles/llvm-yaml-numeric-parser-fuzzer.dir/DummyYAMLNumericParserFuzzer.cpp.o
 bin/llvm-yaml-numeric-parser-fuzzer: tools/llvm-yaml-numeric-parser-fuzzer/CMakeFiles/llvm-yaml-numeric-parser-fuzzer.dir/yaml-numeric-parser-fuzzer.cpp.o
 bin/llvm-yaml-numeric-parser-fuzzer: tools/llvm-yaml-numeric-parser-fuzzer/CMakeFiles/llvm-yaml-numeric-parser-fuzzer.dir/build.make
-bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVM.dylib
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMSupport.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMFuzzMutate.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMBitWriter.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMScalarOpts.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMAggressiveInstCombine.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMInstCombine.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMTransformUtils.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMTarget.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMAnalysis.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMObject.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMBitReader.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMMCParser.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMTextAPI.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMProfileData.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMCore.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMRemarks.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMBitstreamReader.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMMC.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMBinaryFormat.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMDebugInfoCodeView.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMDebugInfoMSF.a
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMSupport.a
+bin/llvm-yaml-numeric-parser-fuzzer: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/llvm-yaml-numeric-parser-fuzzer: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/llvm-yaml-numeric-parser-fuzzer: lib/libLLVMDemangle.a
 bin/llvm-yaml-numeric-parser-fuzzer: tools/llvm-yaml-numeric-parser-fuzzer/CMakeFiles/llvm-yaml-numeric-parser-fuzzer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../bin/llvm-yaml-numeric-parser-fuzzer"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/llvm-yaml-numeric-parser-fuzzer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/llvm-yaml-numeric-parser-fuzzer.dir/link.txt --verbose=$(VERBOSE)

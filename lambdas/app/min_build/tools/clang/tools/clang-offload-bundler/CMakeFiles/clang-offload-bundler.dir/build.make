@@ -98,8 +98,23 @@ clang__offload__bundler_EXTERNAL_OBJECTS =
 
 bin/clang-offload-bundler: tools/clang/tools/clang-offload-bundler/CMakeFiles/clang-offload-bundler.dir/ClangOffloadBundler.cpp.o
 bin/clang-offload-bundler: tools/clang/tools/clang-offload-bundler/CMakeFiles/clang-offload-bundler.dir/build.make
-bin/clang-offload-bundler: lib/libclang-cpp.dylib
-bin/clang-offload-bundler: lib/libLLVM.dylib
+bin/clang-offload-bundler: lib/libLLVMObject.a
+bin/clang-offload-bundler: lib/libLLVMSupport.a
+bin/clang-offload-bundler: lib/libclangBasic.a
+bin/clang-offload-bundler: lib/libLLVMBitReader.a
+bin/clang-offload-bundler: lib/libLLVMMCParser.a
+bin/clang-offload-bundler: lib/libLLVMTextAPI.a
+bin/clang-offload-bundler: lib/libLLVMCore.a
+bin/clang-offload-bundler: lib/libLLVMRemarks.a
+bin/clang-offload-bundler: lib/libLLVMBitstreamReader.a
+bin/clang-offload-bundler: lib/libLLVMMC.a
+bin/clang-offload-bundler: lib/libLLVMBinaryFormat.a
+bin/clang-offload-bundler: lib/libLLVMDebugInfoCodeView.a
+bin/clang-offload-bundler: lib/libLLVMDebugInfoMSF.a
+bin/clang-offload-bundler: lib/libLLVMSupport.a
+bin/clang-offload-bundler: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
+bin/clang-offload-bundler: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libcurses.tbd
+bin/clang-offload-bundler: lib/libLLVMDemangle.a
 bin/clang-offload-bundler: tools/clang/tools/clang-offload-bundler/CMakeFiles/clang-offload-bundler.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/peyton/UROP/CloudCompiler/llvm-project/min_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../../../bin/clang-offload-bundler"
 	cd /Users/peyton/UROP/CloudCompiler/llvm-project/min_build/tools/clang/tools/clang-offload-bundler && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/clang-offload-bundler.dir/link.txt --verbose=$(VERBOSE)
