@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env python
 
 import asyncio
 import aiohttp
@@ -43,7 +43,7 @@ async def main(source_dir, compressed):
     print("Finished requests to lambda.")
 
 def checkParams(argv):
-    source_dir = '' 
+    source_dir = ''
     compressed = False
     try:
         opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
@@ -59,7 +59,7 @@ def checkParams(argv):
         elif opt in ("-i", "--input"):
             source_dir = arg
         elif opt in ("-c", "--compressed"):
-            compressed = True 
+            compressed = True
 
     if source_dir == "":
         print("No target source directory specified. Use -i to specify a source directory.")
