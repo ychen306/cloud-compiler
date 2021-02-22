@@ -1,19 +1,6 @@
-module.exports.handler = async (event) => {
-  return {
-    statusCode: 200,
-    body: JSON.stringify(
-      {
-        message: `Hello, world! Your function executed successfully!`,
-      },
-      null,
-      2
-    ),
-  };
-};
 const fs = require('fs');
 
 module.exports.handler = (event, context, callback) => {
-
   let data = "";
   if (event.body) {
       let body = JSON.parse(event.body)
@@ -22,28 +9,23 @@ module.exports.handler = (event, context, callback) => {
       }
   }
 
-  const execFile = require('child_process').execFile;
-  fs.writeFile('/tmp/in.bc', data, (err) => {
+  const exec = require('child_process').exec;
+  fs.writeFile('/tmp/in.ll', data, (err) => {
     if(err) {
-      console.error(err);
-    } else {
-      return console.log("Wrote to temp.bc");
+      console.error("Error writing to in.ll: ", err);
     }
   });
-
-  execFile('./build/bin/clang -S -emit-llvm -o /tmp/out.ll -O3 -arch x86 -c /tmp/temp.bc', (error, stdout, stderr) => {
-      if (error) {
-        console.error(error);
-        callback(error);
-      } else {
-        return console.log("Compiled file.");
-      }
+  
+  exec('./compiler/bin/clang -S -emit-llvm -o /tmp/out.ll -O3 -arch x86 -c /tmp/in.ll', (error, stdout, stderr) => {
+    if (error) {
+      console.error("Error with clang: ", error);
+    }
   });
 
   const response_data = fs.readFile('/tmp/out.ll', (error, file_data) => {
     if(error) {
       console.error(error);
-      callback(error);
+      return "";
     } else {
       console.log("Read from out.ll");
       return file_data;
@@ -56,8 +38,7 @@ module.exports.handler = (event, context, callback) => {
       'Access-Control-Allow-Origin': '*', // Required for CORS support to work
     },
     body: JSON.stringify({
-      message: response_data,
-      input: event,
+      output: response_data,
     }),
   };
 

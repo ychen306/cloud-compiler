@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import asyncio
 import aiohttp
 import sys, getopt, glob, os
 
-lambda_url = "lambda url here"
+lambda_url = "https://8thg6f2ms1.execute-api.us-east-2.amazonaws.com/dev/invoke"
 timeout = aiohttp.ClientTimeout(total=60)
 chunk_size = 64 * 1024
 
@@ -16,29 +16,44 @@ chunk_size = 64 * 1024
 #             chunk = await f.read(chunk_size)
 
 async def post(source_dir, file_name, compressed):
-    data = FormData()
-    data.add_field('file',
-                open(file_name, 'rb'),
-                filename=file_name,
-                )
-    data.add_file('compressed', compressed)
+    # data = aiohttp.FormData()
+    # data.add_field('file',
+    #             open(file_name, 'rb'),
+    #             filename=file_name,
+    #             )
+    # data.add_field('compressed', compressed)
+    data = ''
+    with open(file_name, 'r') as f:
+        data = f.read()
 
+    if not data:
+        return
+
+    file_name = file_name.split('/')[-1]
+    payload = {
+        'compressed': 'compressed',
+        'data': data,
+    }
+    
     try:
         async with aiohttp.ClientSession(timeout=timeout) as session:
             async with session.post(lambda_url,
-                        data=data) as resp:
-                with open(os.path.join(source_dir, "/output/" + file_name), 'wb') as fd:
-                    while True:
-                        chunk = await resp.content.read(chunk_size)
-                        if not chunk:
-                            break
-                        fd.write(chunk)
+                        json=payload) as resp:
+                # if resp.status == "200":
+                    body = await resp.json()
+                    print(body['output'])
+                    # with open(source_dir + "/output/" + file_name, 'wb') as fd:
+                    #     while True:
+                    #         chunk = await resp.content.read(chunk_size)
+                    #         if not chunk:
+                    #             break
+                    #         fd.write(chunk)
     except Exception as e:
         print("Unable to post {} to lambda due to {}.".format(file_name, e.__class__))
 
 
 async def main(source_dir, compressed):
-    files = glob.glob(os.path.join(source_dir, "*.bc"))
+    files = glob.glob(os.path.join(source_dir, "*.ll"))
     await asyncio.gather(*[post(source_dir, file_name, compressed) for file_name in files])
     print("Finished requests to lambda.")
 
