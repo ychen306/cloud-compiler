@@ -1,46 +1,44 @@
 const fs = require('fs');
 
 module.exports.handler = (event, context, callback) => {
-  let data = "";
-  if (event.body) {
-      let body = JSON.parse(event.body)
-      if (body.data) {
-          data = body.data;
-      }
+
+  var data = event.data; 
+
+  const execSync = require('child_process').execSync;
+  var error_data = "None";
+  var response_data;
+
+  try {
+    fs.writeFileSync('/tmp/in.ll', data);
+
+    execSync('clang -o /tmp/out.o -O3 -arch x86 -c /tmp/in.ll');
+
+    response_data = fs.readFileSync('/tmp/out.o');
+  } catch(error) {
+    console.error("Error: ", error);
+    error_data = error;
   }
 
-  const exec = require('child_process').exec;
-  fs.writeFile('/tmp/in.ll', data, (err) => {
-    if(err) {
-      console.error("Error writing to in.ll: ", err);
-    }
-  });
-  
-  exec('./compiler/bin/clang -S -emit-llvm -o /tmp/out.ll -O3 -arch x86 -c /tmp/in.ll', (error, stdout, stderr) => {
-    if (error) {
-      console.error("Error with clang: ", error);
-    }
-  });
+  var response;
+  if(error_data !== "None") {
 
-  const response_data = fs.readFile('/tmp/out.ll', (error, file_data) => {
-    if(error) {
-      console.error(error);
-      return "";
-    } else {
-      console.log("Read from out.ll");
-      return file_data;
-    }
-  });
+    response = {
+      statusCode: 500,
+      body: {
+        error: error_data
+      }
+    };
+  } else {
 
-  const response = {
-    statusCode: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*', // Required for CORS support to work
-    },
-    body: JSON.stringify({
-      output: response_data,
-    }),
-  };
+    response = {
+      statusCode: 200,
+      headers: {
+        'Content-Type': 'application/octet-stream'
+      },
+      body: response_data.toString('base64'),
+      isBase64Encoded: true
+    }
+  }
 
   callback(null, response);
 };

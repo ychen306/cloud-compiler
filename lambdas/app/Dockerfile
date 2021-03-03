@@ -1,11 +1,44 @@
-FROM public.ecr.aws/lambda/nodejs:12
-# Alternatively, you can pull the base image from Docker Hub: amazon/aws-lambda-nodejs:12
+# Define custom function directory
+ARG FUNCTION_DIR="/function"
 
-COPY app.js package.json /var/task/
-ADD min_build /var/task/compiler
+FROM node:12-buster as build-image
 
-# Install NPM dependencies for function
+# Include global arg in this stage of the build
+ARG FUNCTION_DIR
+
+# Install aws-lambda-cpp build dependencies
+
+RUN apt-get update && \
+    apt-get install -y \
+    g++ \
+    make \
+    cmake \
+    unzip \
+    libcurl4-openssl-dev 
+
+# Copy function code
+COPY app.js package.json ${FUNCTION_DIR}/ 
+
+WORKDIR ${FUNCTION_DIR}
+
+# If the dependency is not in package.json uncomment the following line
+# RUN npm install aws-lambda-ric
+
 RUN npm install
 
-# Set the CMD to your handler (could also be done as a parameter override outside of the Dockerfile)
-CMD [ "app.handler" ]  
+# Grab a fresh slim copy of the image to reduce the final size
+FROM node:12-buster-slim
+
+# Include global arg in this stage of the build
+ARG FUNCTION_DIR
+
+# Set working directory to function root directory
+WORKDIR ${FUNCTION_DIR}
+
+# Copy in the built dependencies
+COPY --from=build-image ${FUNCTION_DIR} ${FUNCTION_DIR}
+
+RUN apt-get update && apt-get install -y apt-utils clang
+
+ENTRYPOINT ["/usr/local/bin/npx", "aws-lambda-ric"]
+CMD ["app.handler"]

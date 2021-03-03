@@ -2,9 +2,9 @@
 
 import asyncio
 import aiohttp
-import sys, getopt, glob, os
+import sys, getopt, glob, os, json, base64
 
-lambda_url = "https://8thg6f2ms1.execute-api.us-east-2.amazonaws.com/dev/invoke"
+lambda_url = "http://localhost:9000/2015-03-31/functions/function/invocations"
 timeout = aiohttp.ClientTimeout(total=60)
 chunk_size = 64 * 1024
 
@@ -15,13 +15,8 @@ chunk_size = 64 * 1024
 #             yield chunk
 #             chunk = await f.read(chunk_size)
 
-async def post(source_dir, file_name, compressed):
-    # data = aiohttp.FormData()
-    # data.add_field('file',
-    #             open(file_name, 'rb'),
-    #             filename=file_name,
-    #             )
-    # data.add_field('compressed', compressed)
+async def post(output_path, file_name, compressed):
+
     data = ''
     with open(file_name, 'r') as f:
         data = f.read()
@@ -30,31 +25,33 @@ async def post(source_dir, file_name, compressed):
         return
 
     file_name = file_name.split('/')[-1]
+    file_name = file_name.split('.')[0]
+
     payload = {
-        'compressed': 'compressed',
+        'compressed': compressed,
         'data': data,
     }
-    
+
     try:
-        async with aiohttp.ClientSession(timeout=timeout) as session:
+        async with aiohttp.ClientSession() as session:
             async with session.post(lambda_url,
                         json=payload) as resp:
-                # if resp.status == "200":
-                    body = await resp.json()
-                    print(body['output'])
-                    # with open(source_dir + "/output/" + file_name, 'wb') as fd:
-                    #     while True:
-                    #         chunk = await resp.content.read(chunk_size)
-                    #         if not chunk:
-                    #             break
-                    #         fd.write(chunk)
+                if resp.status == 200:
+                    with open(os.path.join(output_path, file_name + ".o"), 'wb') as fd:
+                        body = json.loads(await resp.text())['body']
+                        fd.write(base64.b64decode(body))
+
     except Exception as e:
         print("Unable to post {} to lambda due to {}.".format(file_name, e.__class__))
 
 
 async def main(source_dir, compressed):
     files = glob.glob(os.path.join(source_dir, "*.ll"))
-    await asyncio.gather(*[post(source_dir, file_name, compressed) for file_name in files])
+    output_path = os.path.join(source_dir, "lambda_output")
+    if not os.path.exists(output_path):
+        os.mkdir(output_path)
+
+    await asyncio.gather(*[post(output_path, file_name, compressed) for file_name in files])
     print("Finished requests to lambda.")
 
 def checkParams(argv):
@@ -62,17 +59,16 @@ def checkParams(argv):
     compressed = False
     try:
         opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+        source_dir = args[0]
     except getopt.GetoptError:
-        print('cloud_compile.py -i <path_to_source>')
+        print('cloud_compile.py <path_to_source>')
         sys.exit(2)
-    for opt, arg in opts:
+    for opt, arg in opts[1:]:
         if opt == '-h' or opt == "--help":
             print('cloud_compile.py -i --input <path_to_source>')
             print("Additional Flags: ")
             print("-c --compressed (Default=False)")
             sys.exit()
-        elif opt in ("-i", "--input"):
-            source_dir = arg
         elif opt in ("-c", "--compressed"):
             compressed = True
 
