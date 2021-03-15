@@ -6,7 +6,7 @@ import sys, getopt, glob, os, json, base64
 import zlib
 import argparse
 
-lambda_url = "https://nz36kf6b0m.execute-api.us-east-2.amazonaws.com/dev/invoke"
+lambda_url = "https://cb5m2li14l.execute-api.us-east-2.amazonaws.com/dev/invoke"
 timeout = aiohttp.ClientTimeout(total=60)
 chunk_size = 64 * 1024
 
@@ -33,23 +33,23 @@ async def post(output_path, file_name, compressed, llc_args, opt_args):
 
     data = base64.b64encode(data).decode('utf8')
 
-    payload = {
+    payload = json.dumps({
         'compressed': compressed,
         'data': data,
         'llc_args': llc_args,
         'opt_args': opt_args
-    }
+    })
+    
 
     try:
         async with aiohttp.ClientSession() as session:
             async with session.post(lambda_url,
                         json=payload) as resp:
-                print(resp)
                 if resp.status == 200:
                     with open(os.path.join(output_path, file_name + ".o"), 'wb') as fd:
                         body = json.loads(await resp.text())['body']
-                        fd.write(base64.b64decode(body))
-
+                        output = json.loads(body)['data']
+                        fd.write(base64.b64decode(output))
     except Exception as e:
         print("Unable to post {} to lambda due to {}.".format(file_name, e.__class__))
 
@@ -58,9 +58,10 @@ async def main(source, compressed, llc_args, opt_args):
 
     if os.path.isfile(source):
         files = [source]
+        source = os.path.dirname(source)
     else:
         files = glob.glob(os.path.join(source, "*.bc"))
-    
+
     output_path = os.path.join(source, "lambda_output")
     if not os.path.exists(output_path):
         os.mkdir(output_path)
@@ -75,7 +76,7 @@ def checkParams():
     llc_args = ''
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-c', '--compressed', action='store_true') 
+    parser.add_argument('-c', '--compressed', action='store_true')
     parser.add_argument('-llc', '--llc_args', type=str, help="Comma separated flags to send to llc")
     parser.add_argument('-opt', '--opt_args', type=str, help="Comma separated flags to send to opt")
     parser.add_argument('file', help="File to compile (.bc or .ll)")
@@ -86,18 +87,18 @@ def checkParams():
     try:
         if args.llc_args:
             llc_args = args.llc_args.split(",")
-            llc_args = ['-' + arg for arg in llc_args] 
+            llc_args = ['-' + arg for arg in llc_args]
             llc_args = ' '.join(llc_args)
         if args.opt_args:
             opt_args = args.opt_args.split(",")
-            opt_args = ['-' + arg for arg in opt_args] 
+            opt_args = ['-' + arg for arg in opt_args]
             opt_args = ' '.join(opt_args)
 
         source = args.file
     except:
         print('Error parsing arguments')
         sys.exit(2)
-        
+
     return source, compressed, llc_args, opt_args
 
 if __name__ == "__main__":

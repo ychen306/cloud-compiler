@@ -8,11 +8,14 @@ module.exports.handler = (event, context, callback) => {
   var error_data = "None";
   var response_data;
 
+  const requestBody = JSON.parse(event.body);
+
+  
   try {
-    data = Buffer.from(event.data, 'base64'); 
-    compressed = event.compressed;
-    opt_args = event.opt_args;
-    llc_args = event.llc_args;
+    data = Buffer.from(requestBody.data, 'base64');
+    compressed = requestBody.compressed || false;
+    opt_args = requestBody.opt_args || '';
+    llc_args = requestBody.llc_args || '';
   } catch(error) {
     console.error("Error fetching arguments: ", error);
     error_data = error;
@@ -39,20 +42,24 @@ module.exports.handler = (event, context, callback) => {
 
     response = {
       statusCode: 500,
-      body: {
-        error: error_data
-      }
+      body: JSON.stringify({
+        error: error_data,
+        input: event
+      })
     };
 
   } else {
 
     response = {
       statusCode: 200,
-      headers: {
+      headers: JSON.stringify({
         'Content-Type': 'application/octet-stream'
-      },
-      body: response_data.toString('base64'),
-      isBase64Encoded: true
+      }),
+      body: JSON.stringify({
+        data: response_data.toString('base64'),
+        input: event
+      }),
+      isBase64Encoded: true,
     }
   }
 

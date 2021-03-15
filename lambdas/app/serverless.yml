@@ -57,11 +57,12 @@ provider:
 
 functions:
   compile:
-    image: 914213759135.dkr.ecr.us-east-2.amazonaws.com/cloud-compiler-lambda@sha256:79608a85d39e4be14b18aa3f96efa997e5b8a413cc83f4bf4c7f1a4004a2c507
+    image: 914213759135.dkr.ecr.us-east-2.amazonaws.com/cloud-compiler-lambda@sha256:b36492a5ed36cec01374e6901e480ccd08a1215d1c8c22aecf7ac648010dc1f0
     events:
         - http:
             path: invoke
             method: post
+            integration: lambda
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
