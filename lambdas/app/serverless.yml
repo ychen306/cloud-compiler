@@ -57,7 +57,7 @@ provider:
 
 functions:
   compile:
-    image: 914213759135.dkr.ecr.us-east-2.amazonaws.com/cloud-compiler-lambda@sha256:ec02fa06dec314bc380e4b5ffc5067f9a1f3af844932b92aae10c7f2be024998
+    image: 914213759135.dkr.ecr.us-east-2.amazonaws.com/cloud-compiler-lambda@sha256:79608a85d39e4be14b18aa3f96efa997e5b8a413cc83f4bf4c7f1a4004a2c507
     events:
         - http:
             path: invoke

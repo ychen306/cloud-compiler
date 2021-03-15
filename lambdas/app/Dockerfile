@@ -38,7 +38,14 @@ WORKDIR ${FUNCTION_DIR}
 # Copy in the built dependencies
 COPY --from=build-image ${FUNCTION_DIR} ${FUNCTION_DIR}
 
-RUN apt-get update && apt-get install -y apt-utils clang
+RUN apt-get update && \
+    apt-get install -y \
+    apt-utils \
+    libllvm-ocaml-dev \
+    libllvm7 \
+    llvm-7 \
+    llvm-dev \
+    llvm-runtime 
 
 ENTRYPOINT ["/usr/local/bin/npx", "aws-lambda-ric"]
 CMD ["app.handler"]

@@ -179,7 +179,7 @@
             "Type": "AWS::Lambda::Function",
             "Properties": {
               "Code": {
-                "ImageUri": "914213759135.dkr.ecr.us-east-2.amazonaws.com/cloud-compiler-lambda@sha256:ec02fa06dec314bc380e4b5ffc5067f9a1f3af844932b92aae10c7f2be024998"
+                "ImageUri": "914213759135.dkr.ecr.us-east-2.amazonaws.com/cloud-compiler-lambda@sha256:79608a85d39e4be14b18aa3f96efa997e5b8a413cc83f4bf4c7f1a4004a2c507"
               },
               "PackageType": "Image",
               "FunctionName": "app-dev-compile",
@@ -196,14 +196,14 @@
               "CompileLogGroup"
             ]
           },
-          "CompileLambdaVersionEXOyobK2Xji1MM6ojMHX8AmXGIuzlRHEJn5aYCgce5g": {
+          "CompileLambdaVersiongDIdQtfT5vW5TnFbIGIPxRmuBrGx4vCcbvAfhGUjy4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CompileLambdaFunction"
               },
-              "CodeSha256": "ec02fa06dec314bc380e4b5ffc5067f9a1f3af844932b92aae10c7f2be024998"
+              "CodeSha256": "79608a85d39e4be14b18aa3f96efa997e5b8a413cc83f4bf4c7f1a4004a2c507"
             }
           },
           "ApiGatewayRestApi": {
@@ -276,7 +276,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1614026787270": {
+          "ApiGatewayDeployment1615816798045": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -335,7 +335,7 @@
           "CompileLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CompileLambdaVersionEXOyobK2Xji1MM6ojMHX8AmXGIuzlRHEJn5aYCgce5g"
+              "Ref": "CompileLambdaVersiongDIdQtfT5vW5TnFbIGIPxRmuBrGx4vCcbvAfhGUjy4"
             }
           },
           "ServiceEndpoint": {
@@ -450,7 +450,7 @@
     "pluginsData": {},
     "functions": {
       "compile": {
-        "image": "914213759135.dkr.ecr.us-east-2.amazonaws.com/cloud-compiler-lambda@sha256:ec02fa06dec314bc380e4b5ffc5067f9a1f3af844932b92aae10c7f2be024998",
+        "image": "914213759135.dkr.ecr.us-east-2.amazonaws.com/cloud-compiler-lambda@sha256:79608a85d39e4be14b18aa3f96efa997e5b8a413cc83f4bf4c7f1a4004a2c507",
         "events": [
           {
             "http": {
@@ -465,7 +465,7 @@
         "memory": 1024,
         "timeout": 6,
         "vpc": {},
-        "versionLogicalId": "CompileLambdaVersionEXOyobK2Xji1MM6ojMHX8AmXGIuzlRHEJn5aYCgce5g"
+        "versionLogicalId": "CompileLambdaVersiongDIdQtfT5vW5TnFbIGIPxRmuBrGx4vCcbvAfhGUjy4"
       }
     },
     "configValidationMode": "warn",
@@ -486,7 +486,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/app/dev/1614026789229-2021-02-22T20:46:29.229Z",
+    "artifactDirectoryName": "serverless/app/dev/1615816802084-2021-03-15T14:00:02.084Z",
     "artifact": ""
   }
 }
