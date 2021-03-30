@@ -41,6 +41,7 @@ COPY --from=build-image ${FUNCTION_DIR} ${FUNCTION_DIR}
 RUN apt-get update && \
     apt-get install -y \
     apt-utils \
+    clang \
     libllvm-ocaml-dev \
     libllvm7 \
     llvm-7 \

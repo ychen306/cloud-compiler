@@ -6,7 +6,8 @@ import sys, getopt, glob, os, json, base64
 import zlib
 import argparse
 
-lambda_url = "https://cb5m2li14l.execute-api.us-east-2.amazonaws.com/dev/invoke"
+# lambda_url = "https://cb5m2li14l.execute-api.us-east-2.amazonaws.com/dev/invoke"
+lambda_url = "http://localhost:9000/2015-03-31/functions/function/invocations"
 timeout = aiohttp.ClientTimeout(total=60)
 chunk_size = 64 * 1024
 
@@ -42,7 +43,6 @@ async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args
         'use_clang': use_clang,
         'target': target
     })
-    
 
     try:
         async with aiohttp.ClientSession() as session:
@@ -111,7 +111,9 @@ def checkParams():
         else:
             out_dir = os.path.dirname(os.path.realpath(args.file))
 
-        target = args.target
+        if args.target:
+            target = args.target
+
         source = args.file
     except:
         print('Error parsing arguments')

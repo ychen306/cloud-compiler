@@ -4,32 +4,42 @@ const zlib = require('zlib');
 module.exports.handler = (event, context, callback) => {
 
   const execSync = require('child_process').execSync;
-  var data, compressed, opt_args, llc_args;
+  var data, compressed, use_clang, target, opt_args, llc_args, clang_args;
   var error_data = "None";
   var response_data;
 
   const requestBody = JSON.parse(event.body);
-
   
   try {
     data = Buffer.from(requestBody.data, 'base64');
+    target = requestBody.target || '';
     compressed = requestBody.compressed || false;
+    use_clang = requestBody.use_clang || false;
     opt_args = requestBody.opt_args || '';
     llc_args = requestBody.llc_args || '';
+    clang_args = requestBody.clang_args || '';
   } catch(error) {
     console.error("Error fetching arguments: ", error);
     error_data = error;
   }
-
-
+  
+  
   try {
     if(compressed) {
       data = zlib.inflateSync(data);
     }
+    
+    if(target) {
+      target = "--target " + target;
+    }
 
     fs.writeFileSync('/tmp/in.ll', data);
 
-    execSync(`opt /tmp/in.ll ${opt_args} | llc -filetype=obj ${llc_args} -o /tmp/out.o`);
+    if(use_clang) {
+      execSync(`clang /tmp/in.ll -c ${clang_args} -o /tmp/out.o ${target}`);
+    } else {
+      execSync(`opt /tmp/in.ll ${opt_args} | llc -filetype=obj ${llc_args} -o /tmp/out.o ${target}`);
+    }
 
     response_data = fs.readFileSync('/tmp/out.o');
   } catch(error) {
