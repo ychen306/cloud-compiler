@@ -6,8 +6,7 @@ import sys, getopt, glob, os, json, base64
 import zlib
 import argparse
 
-# lambda_url = "https://cb5m2li14l.execute-api.us-east-2.amazonaws.com/dev/invoke"
-lambda_url = "http://localhost:9000/2015-03-31/functions/function/invocations"
+lambda_url = "https://og4f3t689a.execute-api.us-east-2.amazonaws.com/dev/invoke"
 timeout = aiohttp.ClientTimeout(total=60)
 chunk_size = 64 * 1024
 
@@ -49,9 +48,9 @@ async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args
             async with session.post(lambda_url,
                         json=payload) as resp:
                 if resp.status == 200:
+                    body = json.loads(await resp.text())['body']
+                    output = json.loads(body)['data']
                     with open(os.path.join(output_path, file_name + ".o"), 'wb') as fd:
-                        body = json.loads(await resp.text())['body']
-                        output = json.loads(body)['data']
                         fd.write(base64.b64decode(output))
     except Exception as e:
         print("Unable to post {} to lambda due to {}.".format(file_name, e.__class__))

@@ -30,7 +30,11 @@ module.exports.handler = (event, context, callback) => {
     }
     
     if(target) {
-      target = "--target " + target;
+      if(use_clang) {
+        target = "--target=" + target;
+      } else {
+        target = "-mtriple=" + target;
+      }
     }
 
     fs.writeFileSync('/tmp/in.ll', data);
