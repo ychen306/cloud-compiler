@@ -52,7 +52,7 @@ async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args
                 body = json.loads(body)
 
                 if body['std_out']['data']:
-                    print("Stdout: " + std_out['data'])
+                    print("Stdout: " + body['std_out']['data'])
 
                 if resp.status == 200:
                     output = body['data']
