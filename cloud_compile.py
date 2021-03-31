@@ -6,7 +6,7 @@ import sys, getopt, glob, os, json, base64
 import zlib
 import argparse
 
-lambda_url = "https://og4f3t689a.execute-api.us-east-2.amazonaws.com/dev/invoke"
+lambda_url = "https://bg8lqcw3mg.execute-api.us-east-2.amazonaws.com/dev/invoke"
 timeout = aiohttp.ClientTimeout(total=60)
 chunk_size = 64 * 1024
 
@@ -47,11 +47,19 @@ async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args
         async with aiohttp.ClientSession() as session:
             async with session.post(lambda_url,
                         json=payload) as resp:
+                
+                body = json.loads(await resp.text())['body']
+                body = json.loads(body)
+
+                if body['std_out']['data']:
+                    print("Stdout: " + std_out['data'])
+
                 if resp.status == 200:
-                    body = json.loads(await resp.text())['body']
-                    output = json.loads(body)['data']
+                    output = body['data']
                     with open(os.path.join(output_path, file_name + ".o"), 'wb') as fd:
                         fd.write(base64.b64decode(output))
+                else:
+                    raise Exception("Failed response")
     except Exception as e:
         print("Unable to post {} to lambda due to {}.".format(file_name, e.__class__))
 
@@ -93,17 +101,11 @@ def checkParams():
 
     try:
         if args.llc_args:
-            llc_args = args.llc_args.split(",")
-            llc_args = ['-' + arg for arg in llc_args]
-            llc_args = ' '.join(llc_args)
+            llc_args = args.llc_args
         if args.opt_args:
-            opt_args = args.opt_args.split(",")
-            opt_args = ['-' + arg for arg in opt_args]
-            opt_args = ' '.join(opt_args)
+            opt_args = args.opt_args
         if args.clang_args:
-            clang_args = args.clang_args.split(",")
-            clang_args = ['-' + arg for arg in clang_args]
-            clang_args = ' '.join(clang_args) 
+            clang_args = args.clang_args
 
         if args.output:
             out_dir = args.output
@@ -114,8 +116,8 @@ def checkParams():
             target = args.target
 
         source = args.file
-    except:
-        print('Error parsing arguments')
+    except Exception as e:
+        print("Error parsing arguments: {}.".format(e.__class__))
         sys.exit(2)
 
 

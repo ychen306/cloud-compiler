@@ -41,12 +41,14 @@ COPY --from=build-image ${FUNCTION_DIR} ${FUNCTION_DIR}
 RUN apt-get update && \
     apt-get install -y \
     apt-utils \
-    clang \
-    libllvm-ocaml-dev \
-    libllvm7 \
-    llvm-7 \
-    llvm-dev \
-    llvm-runtime 
+    gnupg \
+    wget \
+    lsb-release \ 
+    software-properties-common && \
+    wget https://apt.llvm.org/llvm.sh && \
+    chmod +x llvm.sh && \
+    wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
+    ./llvm.sh 12 
 
 ENTRYPOINT ["/usr/local/bin/npx", "aws-lambda-ric"]
 CMD ["app.handler"]
