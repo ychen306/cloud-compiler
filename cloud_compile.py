@@ -19,14 +19,14 @@ chunk_size = 64 * 1024
 
 async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args, clang_args, target):
 
-    with open(file_name, 'rb') as f:
-        data = f.read()
+    if file_name == '-':
+        data = sys.stdin.buffer.read()
+    else:
+        with open(file_name, 'rb') as f:
+          data = f.read()
 
     if not data:
         return
-
-    file_name = os.path.basename(file_name)
-    file_name = file_name.split('.')[0]
 
     if compressed:
         data = zlib.compress(data)
@@ -56,7 +56,7 @@ async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args
 
                 if resp.status == 200:
                     output = body['data']
-                    with open(os.path.join(output_path, file_name + ".o"), 'wb') as fd:
+                    with open(output_path, 'wb') as fd:
                         fd.write(base64.b64decode(output))
                 else:
                     raise Exception("Failed response")
@@ -64,15 +64,16 @@ async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args
         print("Unable to post {} to lambda due to {}.".format(file_name, e.__class__))
 
 
-async def main(source, compressed, use_clang, out_dir, llc_args, opt_args, clang_args, target):
+async def main(source, compressed, use_clang, output, llc_args, opt_args, clang_args, target):
 
-    if os.path.isfile(source):
+    # - for stdin
+    if os.path.isfile(source) or source == '-':
         files = [source]
         source = os.path.dirname(source)
     else:
         files = glob.glob(os.path.join(source, "*.bc"))
 
-    await asyncio.gather(*[post(out_dir, file_name, compressed, use_clang, llc_args, opt_args, clang_args, target) for file_name in files])
+    await asyncio.gather(*[post(output, file_name, compressed, use_clang, llc_args, opt_args, clang_args, target) for file_name in files])
     print("Finished requests to lambda.")
 
 def checkParams():
@@ -88,7 +89,7 @@ def checkParams():
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--compressed', action='store_true', help="Flag set if .ll or .bc file compressed")
     parser.add_argument('-uc', '--use_clang', action='store_true', help='Flag set builds the object with clang else opt and llc')
-    parser.add_argument('-o', '--output', type=str, help="Output directory")
+    parser.add_argument('-o', '--output', type=str, help="Output file", required=True)
     parser.add_argument('-llc', '--llc_args', type=str, help="Comma separated flags to send to llc")
     parser.add_argument('-opt', '--opt_args', type=str, help="Comma separated flags to send to opt")
     parser.add_argument('-clang', '--clang_args', type=str, help="Comma separated flags to send to clang")
@@ -107,10 +108,7 @@ def checkParams():
         if args.clang_args:
             clang_args = args.clang_args
 
-        if args.output:
-            out_dir = args.output
-        else:
-            out_dir = os.path.dirname(os.path.realpath(args.file))
+        output = args.output
 
         if args.target:
             target = args.target
@@ -121,8 +119,8 @@ def checkParams():
         sys.exit(2)
 
 
-    return source, compressed, use_clang, out_dir, llc_args, opt_args, clang_args, target
+    return source, compressed, use_clang, output, llc_args, opt_args, clang_args, target
 
 if __name__ == "__main__":
-    source, compressed, use_clang, out_dir, llc_args, opt_args, clang_args, target = checkParams()
-    asyncio.run(main(source, compressed, use_clang, out_dir, llc_args, opt_args, clang_args, target))
+    source, compressed, use_clang, output, llc_args, opt_args, clang_args, target = checkParams()
+    asyncio.run(main(source, compressed, use_clang, output, llc_args, opt_args, clang_args, target))
