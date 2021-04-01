@@ -163,7 +163,7 @@
         "PackageType": "Image",
         "FunctionName": "app-dev-compile",
         "MemorySize": 1024,
-        "Timeout": 6,
+        "Timeout": 30,
         "Role": {
           "Fn::GetAtt": [
             "IamRoleLambdaExecution",
@@ -175,7 +175,7 @@
         "CompileLogGroup"
       ]
     },
-    "CompileLambdaVersionVhiEme1WfL5KZTFIL7gDAnE6JaUx00AirEFmzA": {
+    "CompileLambdaVersionG9BjCBasl9CYnYjzyKF31qvhmxGQ0dR6yoBdx0HSk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
@@ -362,7 +362,7 @@
         ]
       }
     },
-    "ApiGatewayDeployment1617198359390": {
+    "ApiGatewayDeployment1617296942499": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -421,7 +421,7 @@
     "CompileLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CompileLambdaVersionVhiEme1WfL5KZTFIL7gDAnE6JaUx00AirEFmzA"
+        "Ref": "CompileLambdaVersionG9BjCBasl9CYnYjzyKF31qvhmxGQ0dR6yoBdx0HSk"
       }
     },
     "ServiceEndpoint": {
