@@ -58,8 +58,10 @@ async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args
                     output = body['data']
                     if output_path == '-':
                         sys.stdout.buffer.write(base64.b64decode(output))
-                    with open(output_path, 'wb') as fd:
-                        fd.write(base64.b64decode(output))
+                        sys.stdout.flush()
+                    else:
+                        with open(output_path, 'wb') as fd:
+                            fd.write(base64.b64decode(output))
                 else:
                     raise Exception("Failed response")
     except Exception as e:
