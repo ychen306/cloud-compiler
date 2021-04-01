@@ -56,6 +56,8 @@ async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args
 
                 if resp.status == 200:
                     output = body['data']
+                    if output_path == '-':
+                        sys.stdout.buffer.write(base64.b64decode(output))
                     with open(output_path, 'wb') as fd:
                         fd.write(base64.b64decode(output))
                 else:
