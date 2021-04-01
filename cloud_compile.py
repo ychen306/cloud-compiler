@@ -52,7 +52,7 @@ async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args
                 body = json.loads(body)
 
                 if body['std_out']['data']:
-                    print("Stdout: " + body['std_out']['data'])
+                    print("Stdout: " + body['std_out']['data'], file=sys.stderr)
 
                 if resp.status == 200:
                     output = body['data']
@@ -63,7 +63,7 @@ async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args
                 else:
                     raise Exception("Failed response")
     except Exception as e:
-        print("Unable to post {} to lambda due to {}.".format(file_name, e.__class__))
+        print("Unable to post {} to lambda due to {}.".format(file_name, e.__class__), file=sys.stderr)
 
 
 async def main(source, compressed, use_clang, output, llc_args, opt_args, clang_args, target):
@@ -76,7 +76,7 @@ async def main(source, compressed, use_clang, output, llc_args, opt_args, clang_
         files = glob.glob(os.path.join(source, "*.bc"))
 
     await asyncio.gather(*[post(output, file_name, compressed, use_clang, llc_args, opt_args, clang_args, target) for file_name in files])
-    print("Finished requests to lambda.")
+    print("Finished requests to lambda.", file=sys.stderr)
 
 def checkParams():
     source = ''
@@ -117,7 +117,7 @@ def checkParams():
 
         source = args.file
     except Exception as e:
-        print("Error parsing arguments: {}.".format(e.__class__))
+        print("Error parsing arguments: {}.".format(e.__class__), file=sys.stderr)
         sys.exit(2)
 
 
