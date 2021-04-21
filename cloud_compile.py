@@ -35,8 +35,7 @@ async def post(output_path, file_name, compressed, clang_cmd):
         async with aiohttp.ClientSession() as session:
             async with session.post(lambda_url,
                         json=payload) as resp:
-                
-                print(await resp.text())
+
                 body = json.loads(await resp.text())['body']
                 body = json.loads(body)
 
@@ -94,7 +93,7 @@ def checkParams():
         sys.exit(2)
 
 
-    return source, output, compressed, clang_cmd 
+    return source, output, compressed, clang_cmd
 
 if __name__ == "__main__":
     source, output, compressed, clang_cmd = checkParams()
