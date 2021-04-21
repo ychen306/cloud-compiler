@@ -6,18 +6,9 @@ import sys, getopt, glob, os, json, base64
 import zlib
 import argparse
 
-lambda_url = "https://bg8lqcw3mg.execute-api.us-east-2.amazonaws.com/dev/invoke"
-timeout = aiohttp.ClientTimeout(total=60)
-chunk_size = 64 * 1024
+lambda_url = "https://f72ru60lsi.execute-api.us-east-2.amazonaws.com/dev/invoke"
 
-# async def file_sender(full_path):
-#     async with aiofiles.open(full_path, 'rb') as f:
-#         chunk = await f.read(chunk_size)
-#         while chunk:
-#             yield chunk
-#             chunk = await f.read(chunk_size)
-
-async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args, clang_args, target):
+async def post(output_path, file_name, compressed, clang_cmd):
 
     if file_name == '-':
         data = sys.stdin.buffer.read()
@@ -36,11 +27,8 @@ async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args
     payload = json.dumps({
         'compressed': compressed,
         'data': data,
-        'llc_args': llc_args,
-        'opt_args': opt_args,
-        'clang_args': clang_args,
-        'use_clang': use_clang,
-        'target': target
+        'clang_cmd': clang_cmd,
+        'file_name': file_name
     })
 
     try:
@@ -48,6 +36,7 @@ async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args
             async with session.post(lambda_url,
                         json=payload) as resp:
                 
+                print(await resp.text())
                 body = json.loads(await resp.text())['body']
                 body = json.loads(body)
 
@@ -68,7 +57,7 @@ async def post(output_path, file_name, compressed, use_clang, llc_args, opt_args
         print("Unable to post {} to lambda due to {}.".format(file_name, e.__class__), file=sys.stderr)
 
 
-async def main(source, compressed, use_clang, output, llc_args, opt_args, clang_args, target):
+async def main(source, output, compressed, clang_cmd):
 
     # - for stdin
     if os.path.isfile(source) or source == '-':
@@ -77,54 +66,36 @@ async def main(source, compressed, use_clang, output, llc_args, opt_args, clang_
     else:
         files = glob.glob(os.path.join(source, "*.bc"))
 
-    await asyncio.gather(*[post(output, file_name, compressed, use_clang, llc_args, opt_args, clang_args, target) for file_name in files])
+    await asyncio.gather(*[post(output, file_name, compressed, clang_cmd) for file_name in files])
     print("Finished requests to lambda.", file=sys.stderr)
 
 def checkParams():
     source = ''
-    out_dir = ''
+    output = ''
     compressed = False
-    use_clang = False
-    opt_args = ''
-    llc_args = ''
-    clang_args = ''
-    target = ''
+    clang_cmd = ''
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--compressed', action='store_true', help="Flag set if .ll or .bc file compressed")
-    parser.add_argument('-uc', '--use_clang', action='store_true', help='Flag set builds the object with clang else opt and llc')
     parser.add_argument('-o', '--output', type=str, help="Output file", required=True)
-    parser.add_argument('-llc', '--llc_args', type=str, help="Comma separated flags to send to llc")
-    parser.add_argument('-opt', '--opt_args', type=str, help="Comma separated flags to send to opt")
-    parser.add_argument('-clang', '--clang_args', type=str, help="Comma separated flags to send to clang")
-    parser.add_argument('-t', '--target', type=str, help="Target to build object for")
-    parser.add_argument('file', help="File to compile (.bc or .ll)")
+    parser.add_argument('-clang', '--clang_cmd', type=str, help="Command to send to clang")
+    parser.add_argument('file', help="File to compile")
 
     args = parser.parse_args()
     compressed = args.compressed
-    use_clang = args.use_clang
 
     try:
-        if args.llc_args:
-            llc_args = args.llc_args
-        if args.opt_args:
-            opt_args = args.opt_args
-        if args.clang_args:
-            clang_args = args.clang_args
-
-        output = args.output
-
-        if args.target:
-            target = args.target
+        clang_cmd = args.clang_cmd
 
         source = args.file
+        output = args.output
     except Exception as e:
         print("Error parsing arguments: {}.".format(e.__class__), file=sys.stderr)
         sys.exit(2)
 
 
-    return source, compressed, use_clang, output, llc_args, opt_args, clang_args, target
+    return source, output, compressed, clang_cmd 
 
 if __name__ == "__main__":
-    source, compressed, use_clang, output, llc_args, opt_args, clang_args, target = checkParams()
-    asyncio.run(main(source, compressed, use_clang, output, llc_args, opt_args, clang_args, target))
+    source, output, compressed, clang_cmd = checkParams()
+    asyncio.run(main(source, output, compressed, clang_cmd))

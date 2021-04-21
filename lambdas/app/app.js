@@ -4,7 +4,7 @@ const zlib = require('zlib');
 module.exports.handler = (event, context, callback) => {
 
   const execSync = require('child_process').execSync;
-  var data, compressed, use_clang, target, opt_args, llc_args, clang_args;
+  var data, compressed, clang_cmd;
   var error_data = "None";
   var response_data;
 
@@ -12,12 +12,8 @@ module.exports.handler = (event, context, callback) => {
 
   try {
     data = Buffer.from(requestBody.data, 'base64');
-    target = requestBody.target || '';
     compressed = requestBody.compressed || false;
-    use_clang = requestBody.use_clang || false;
-    opt_args = requestBody.opt_args || '';
-    llc_args = requestBody.llc_args || '';
-    clang_args = requestBody.clang_args || '';
+    clang_cmd = requestBody.clang_cmd || '';
   } catch(error) {
     console.error("Error fetching arguments: ", error);
     error_data = error;
@@ -30,21 +26,9 @@ module.exports.handler = (event, context, callback) => {
       data = zlib.inflateSync(data);
     }
 
-    if(target) {
-      if(use_clang) {
-        target = "--target=" + target;
-      } else {
-        target = "-mtriple=" + target;
-      }
-    }
+    fs.writeFileSync('/tmp/in', data);
 
-    fs.writeFileSync('/tmp/in.ll', data);
-
-    if(use_clang) {
-      std_out = execSync(`clang-12 /tmp/in.ll -c ${clang_args} -o /tmp/out.o ${target}`);
-    } else {
-      std_out = execSync(`opt-12 /tmp/in.ll ${opt_args} | llc-12 -filetype=obj ${llc_args} -o /tmp/out.o ${target}`);
-    }
+    std_out = execSync(`clang-12 ${clang_cmd} /tmp/in -o /tmp/out.o`);
 
     response_data = fs.readFileSync('/tmp/out.o');
   } catch(error) {
