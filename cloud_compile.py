@@ -36,11 +36,16 @@ async def post(output_path, file_name, compressed, clang_cmd):
             async with session.post(lambda_url,
                         json=payload) as resp:
 
-                body = json.loads(await resp.text())['body']
-                body = json.loads(body)
+                # first load top level response
+                json_resp = json.loads(await resp.text())
+                if 'message' in json_resp: # check for error messages from AWS
+                    print("Lambda message: " + json_resp['message'], file=sys.stderr)
+                    raise Exception("Failed execution: " + json_resp['message'])
 
-                if body['std_out']['data']:
-                    print("Stdout: " + body['std_out']['data'], file=sys.stderr)
+                # load second level body
+                body = json.loads(json_resp['body'])
+                if body['std_out']['data']: # std out from clang
+                    print("Lambda stdout: " + body['std_out']['data'], file=sys.stderr)
 
                 if resp.status == 200:
                     output = body['data']
