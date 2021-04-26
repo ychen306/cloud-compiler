@@ -1,0 +1,28 @@
+diff -urN lib/Driver/Job.cpp new-lib/Driver/Job.cpp
+--- lib/Driver/Job.cpp	2021-04-06 12:38:18.000000000 -0400
++++ new-lib/Driver/Job.cpp	2021-04-22 13:49:49.000000000 -0400
+@@ -378,7 +378,7 @@
+   // FIXME: Currently, if there're more than one job, we disable
+   // -fintegrate-cc1. If we're no longer a integrated-cc1 job, fallback to
+   // out-of-process execution. See discussion in https://reviews.llvm.org/D74447
+-  if (!InProcess)
++  if (!InProcess || true)
+     return Command::Execute(Redirects, ErrMsg, ExecutionFailed);
+ 
+   PrintFileNames();
+diff -urN lib/Driver/ToolChains/Clang.cpp new-lib/Driver/ToolChains/Clang.cpp
+--- lib/Driver/ToolChains/Clang.cpp	2021-04-06 12:38:18.000000000 -0400
++++ new-lib/Driver/ToolChains/Clang.cpp	2021-04-22 14:08:26.000000000 -0400
+@@ -6549,9 +6549,11 @@
+         Output));
+   } else if (D.CC1Main && !D.CCGenDiagnostics) {
+     // Invoke the CC1 directly in this process
++    std::string *PathToCloudCC = new std::string(getToolChain().getDriver().getInstalledDir());
++    *PathToCloudCC += "/cloud-cc";
+     C.addCommand(std::make_unique<CC1Command>(JA, *this,
+                                               ResponseFileSupport::AtFileUTF8(),
+-                                              Exec, CmdArgs, Inputs, Output));
++                                              PathToCloudCC->c_str(), CmdArgs, Inputs, Output));
+   } else {
+     C.addCommand(std::make_unique<Command>(JA, *this,
+                                            ResponseFileSupport::AtFileUTF8(),
