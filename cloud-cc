@@ -3,10 +3,12 @@
 Read clang CC1 driver command, tweak to preprocess input, and send direct the cloud CC1 to 
 compile the preprocessed file
 '''
-
+import tempfile
 import argparse
 import sys
 import subprocess
+import cloud_compile
+import asyncio
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-resource-dir')
@@ -17,6 +19,7 @@ parser.add_argument('-fstack-check', action='store_true')
 parser.add_argument('-mdarwin-stkchk-strong-link', action='store_true')
 parser.add_argument('-fdiagnostics-show-option', action='store_true')
 parser.add_argument('-isysroot')
+parser.add_argument('-emit-obj', action='store_true')
 parser.add_argument('-I')
 parser.add_argument('-o', '--output')
 parser.add_argument('-E', action='store_true')
@@ -35,7 +38,44 @@ parsed, kept_args = parser.parse_known_args()
 # TODO: be more comprehensive (e.g., support foo.ll)
 language = 'cpp-output' if parsed.x == 'c' else 'c++-cpp-output'
 
-# Pass output of the preprocessing process to the compiling process
-clang_args = kept_args[:-1] + ['-x',  language]
-compile_args = ['cloud_compile.py', '-', '-clang='+' '.join(clang_args), '-o', parsed.output]
-subprocess.call(compile_args, stdin=preprocess.stdout)
+# run the frontend and get raw bitcode
+frontend_args = kept_args[:-1] + ['-emit-llvm-bc', '-disable-llvm-passes', '-x',  language]
+compile_args = ['cloud_compile.py', '-c', '-', '-clang='+' '.join(frontend_args), '-o', '-']
+frontend = subprocess.Popen(compile_args, stdin=preprocess.stdout, stdout=subprocess.PIPE)
+
+async def run_tasks(tasks):
+  launched = [asyncio.create_task(t) for t in tasks]
+  for t in launched:
+    await t
+
+# split the bitcode locally before dispatching for parallel cloud compilation
+with tempfile.TemporaryDirectory() as tmpdir, tempfile.NamedTemporaryFile() as tmpf:
+  chunks = 2
+  subprocess.call(['llvm-split', '-j%d'%chunks, '-o', tmpdir], stdin=frontend.stdout)
+  print('finished splitting')
+
+  procs = []
+
+  ## compile chunks in parallel
+  compilers = []
+  for i in range(chunks):
+    # run the optimzer and backend
+    bitcode = f'{tmpdir}{i}'
+    opt_args = kept_args[:-1] + ['-x', 'ir', '-emit-obj']
+    compilers.append(cloud_compile.main(bitcode, bitcode+'.o', True, ' '.join(opt_args)))
+
+  asyncio.run(run_tasks(compilers))
+
+  ## wait
+  #for proc in procs:
+  #  proc.communicate()
+
+  print('finished compiling')
+
+  # link the result
+  link_args = ['ld', '-r']
+  link_args.extend(f'{tmpdir}{i}.o' for i in range(chunks))
+  link_args.extend(['-o', parsed.output])
+  subprocess.call(link_args)
+
+  print('linked chunks')
